@@ -1287,6 +1287,28 @@ input::-moz-focus-inner {
   animation: mv-welcome 2s ease-in-out infinite alternate-reverse both;
 }
 
+@media (max-width: 649px) {
+  @keyframes mv-welcome {
+    0% {
+      transform: translateX(50px);
+    }
+
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+  .welcome {
+    padding: 0;
+  }
+
+  #welcome {
+    height: 43vh;
+  }
+  #welcome::after {
+    height: 43vh;
+  }
+}
+
 /* ------------------------------------------------------------------- 
  * ## display headings
  * ------------------------------------------------------------------- */
