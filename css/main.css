@@ -1287,6 +1287,19 @@ input::-moz-focus-inner {
   animation: mv-welcome 2s ease-in-out infinite alternate-reverse both;
 }
 
+.welcome-btn {
+  display: table;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.welcome-btn button {
+  background-color: white;
+  color: black;
+  border-radius: 100px;
+  border: none;
+}
+
 @media (max-width: 649px) {
   @keyframes mv-welcome {
     0% {
@@ -1302,10 +1315,10 @@ input::-moz-focus-inner {
   }
 
   #welcome {
-    height: 43vh;
+    height: 58vh;
   }
   #welcome::after {
-    height: 43vh;
+    height: 58vh;
   }
 }
 
