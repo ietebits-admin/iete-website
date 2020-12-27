@@ -1298,6 +1298,11 @@ input::-moz-focus-inner {
   color: black;
   border-radius: 100px;
   border: none;
+  padding: 0 65px;
+}
+
+.welcome-btn button:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 649px) {

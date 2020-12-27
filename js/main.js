@@ -3,11 +3,9 @@
  *
  * ------------------------------------------------------------------- */
 
-//  newpage redirect for feedback form
-function feedback() {
-  window.open(
-    "https://docs.google.com/forms/d/e/1FAIpQLSdSpvqp--6F0IEDdXAvVOL6YtrAxvMfvGHkpMbPFRR0rFSHOA/viewform"
-  );
+//  newpage redirect for registration form
+function induction() {
+  window.open("https://bit.ly/isfinductions");
 }
 
 (function ($) {
