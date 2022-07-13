@@ -97,6 +97,14 @@ text-center {
 .members-col {
   margin-top: 20px;
 }
+
+@media only screen and (max-width: 1350px) {
+  .col-quat{
+    width: 50%;
+  }
+}
+
+
 @media only screen and (max-width: 600px) {
   .tech-udbhav-img {
     padding: 1rem 2rem 7rem 2rem;
@@ -120,8 +128,14 @@ text-center {
     display: none;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
   .col-half {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .col-quat{
     width: 100%;
   }
 }
