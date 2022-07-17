@@ -520,7 +520,69 @@ textarea {
 .col-full {
     width: 100%;
 }
-
+/* changes by me */
+#home{
+    background-image: url(/images/hero-bg.png);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.eve-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.eve{
+    margin: 20px;
+    width: 430px;
+}
+.eve iframe{
+    width: 100%;
+    height: 300px;
+}
+h3{
+    height: 60px;
+}
+@media (max-width:1500px) {
+    h3{
+        height: 80px;
+    }
+    .eve-list{
+        padding: 20px;
+    }
+    .eve{
+        width: 350px;
+    }
+}
+@media (max-width:1300px) {
+    .eve{
+        width: 450px;
+    }
+}
+@media (max-width:1050px) {
+    .eve{
+        width: 350px;
+    }
+}
+@media (max-width:850px) {
+    h3{
+        height: initial;
+    }
+    .eve-list{
+        padding: 0px 8%;
+    }
+    .eve{
+        width: 100%;
+    }
+}
+@media (max-width:570px){
+    #home{
+        background-image: none;
+    }
+}
 
 /* ------------------------------------------------------------------- 
  * ## medium size devices
