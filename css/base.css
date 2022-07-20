@@ -543,13 +543,13 @@ textarea {
     width: 100%;
     height: 300px;
 }
-h3{
+/* h3{
     height: 60px;
-}
+} */
 @media (max-width:1500px) {
-    h3{
+    /* h3{
         height: 80px;
-    }
+    } */
     .eve-list{
         padding: 20px;
     }
