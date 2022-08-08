@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
     <!-- script
     ================================================== -->
@@ -36,73 +38,112 @@
 
     <style type="text/css">
  
- *{
-   margin: 0px;
-}
-h1{
- text-align: center;
- font-size: 5em;
- font-family: sans-serif;
- margin-top: 20px;
-}
-
-main{
+        *{
+          margin: 0px;
+       }
+       body{
+           overflow-x: hidden;
+       }
+       h1{
+        text-align: center;
+        font-size: 5em;
+        font-family: sans-serif;
+        margin-top: 20px;
+       }
+       
+       main{
+               width: 100%;
+               margin-top: 40px;
+               margin-bottom: 100px;
+       }
+       .box {
+         width: 800px ;
+       }
+       
+       @media screen and (max-width: 320px) {
+         /* comes into effect for screens less than or equal to 320 pixels */
+         .box {
+           width: 120px ;
+         }
+       }
+       @media screen and (min-width: 321px) and (max-width: 480px) {
+         /* comes into effect for screens between 321 and 480 pixels (inclusive) */
+         .box {
+           width: 320px ;
+         }
+       }
+       @media screen and (min-width: 481px) {
+         /* comes into effect for screens larger than or equal to 481 pixels */
+         .box {
+           width: 480px ;
+         }
+       }
+       .box{
+        width: 20%;
+        float: left;
+        padding: 7px;
+        padding-left: 10px;  
+        display: block;
+       
+       }
+       
+       .s-about img,
+       .container img{
         width: 100%;
-        margin-top: 40px;
-        margin-bottom: 100px;
-}
-.box {
-  width: 800px ;
-}
-
-@media screen and (max-width: 320px) {
-  /* comes into effect for screens less than or equal to 320 pixels */
-  .box {
-    width: 120px ;
-  }
-}
-@media screen and (min-width: 321px) and (max-width: 480px) {
-  /* comes into effect for screens between 321 and 480 pixels (inclusive) */
-  .box {
-    width: 320px ;
-  }
-}
-@media screen and (min-width: 481px) {
-  /* comes into effect for screens larger than or equal to 481 pixels */
-  .box {
-    width: 480px ;
-  }
-}
-.box{
- width: 20%;
- float: left;
- padding: 7px;
- padding-left: 10px;  
- display: block;
-
-}
-
-img{
- width: 100%;
-    border-radius: 4px;
-
-}
-
-img:hover{
-    border: 4px solid;
-  transform: scale(1.1,1.1);
-  transition: .6s transform;
-
-}
-        .img-fluid {
-            border: 2px solid #979876;
-            margin:10px auto;
-            box-shadow: 2px solid #556465;
-            border-radius: 10px;
-        }
-
-
-</style>
+           border-radius: 4px;
+       
+       }
+       
+       .s-about img:hover,
+       .container img:hover{
+           border: 4px solid;
+         transform: scale(1.1,1.1);
+         transition: .6s transform;
+       
+       }
+       .img-fluid {
+           border: 2px solid #979876;
+           margin:10px auto;
+           box-shadow: 2px solid #556465;
+           border-radius: 10px;
+       }
+       .swiper {
+           width: 60vw;
+           height: 60vh;
+       }
+       .swiper-slide{
+           border-radius: 10px;
+           height: 60vh;
+           width: 60vw;
+       }
+       .swiper-slide img{
+           /* object-fit: cover; */
+           border-radius: 10px;
+           width: 100%;
+           height: 100%;
+           
+       }
+       @media (max-width: 900px) {
+           .swiper {
+           width: 70vw;
+           height: 40vh;
+       }
+       .swiper-slide{
+           width: 70vw;
+           height: 40vh;
+       }
+       }
+       @media (max-width: 500px) {
+           .swiper {
+           width: 70vw;
+           height: 35vh;
+       }
+       .swiper-slide{
+           width: 70vw;
+           height: 35vh;
+       }
+       }
+       </style>
 
     </head>
     
@@ -244,6 +285,36 @@ img:hover{
                     <div class="col-md-3 col-sm-6 py-4"><a href="images/ievents/event8.jpg" target="_blank"><img src="images/ievents/event8.jpg" class="img-fluid"></a></div>
                 </div>
         </section>
+
+        <!-- wall of 2k18 starts-->
+
+        <section>
+            <h1 style="margin-bottom: 40px;">Wall Of Memories</h1>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="/images/gal-wall/img1.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img2.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img3.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img4.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img5.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img6.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img7.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img8.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img9.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img10.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img11.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img12.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img13.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img14.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img15.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img16.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img17.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="/images/gal-wall/img19.jpg" alt=""></div>
+                </div>
+              </div>
+        </section>
+
+        <!-- wall of 2k18 ends -->
 
     <section>
      <div class="container" style="margin-top: 100px;">
@@ -398,6 +469,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
     <!-- Java Script
     ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+            speed: 1000,
+            loop: true,
+            slidesPerView:1,
+            effect: "cards",
+            grabCursor: true,
+        });
+      </script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
