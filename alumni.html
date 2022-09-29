@@ -23,6 +23,201 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+        body{
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        .bg{
+            height: 40vh;
+            width: 100%;
+            background: linear-gradient(#182848, #4b6cb7);
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem;
+        }
+        nav img{
+            width: 50px;
+            height: 40px;
+        }
+        .main{
+            margin: 2rem;
+            margin-top: 8rem;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            background: ghostwhite;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .cards{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cards a{
+            text-decoration: none;
+        }
+        .cards .card{
+            margin: 10px;
+            min-height: 50px;
+            min-width: 100px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-weight: bold;
+            transition: all .4s linear;
+            color: #182848;
+            cursor: pointer;
+        }
+        .cards .card.active,
+        .cards .card:hover{
+            background: linear-gradient(#182848, #4b6cb7);
+            color: #fff;
+            transform: scale(1.1)
+        }
+        .batches{
+            position: relative;
+        }
+        .batches .batch{
+            position: absolute;
+            transform: translateX(200%);
+        }
+        .batches #b_2018{
+            transform: translateX(0%);
+        }
+        .peoples{
+            margin: 2rem .5rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .peoples .people{
+            padding: 10px;
+            display: flex;
+            width: 30%;
+            min-width: 320px;
+            align-items: center;
+            height: 140px;
+            border-radius: 80px;
+            background: #ffffff;
+            border: 1px solid #fff;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin: 1rem;
+            transition: all .5s linear;
+            position: relative;
+            overflow: hidden;
+        }
+        .peoples .people::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.08);
+            pointer-events: none;
+            transform: skewX(345deg);
+        }
+        .peoples .people:hover .text .blur{
+            display: flex;
+        }
+        .peoples .people img.photo{
+            height: 115px;
+            width: 115px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .peoples .people .text p.name{
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 20px;
+        }
+        .peoples .people .text .blur{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 5px solid #264eab;
+            border-radius: 80px;
+            color: #264eab;
+            background: ghostwhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        .peoples .people .text span{
+            width: 100%;
+            padding: 8px;
+            font-weight: bold;
+        }
+        .peoples .people .text .blur a{
+            padding: 8px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: none;
+        }
+        .peoples .people .text .blur img.brand{
+            height: 40px;
+        }
+        .peoples .people .text a{
+            text-decoration: none;
+            color: #182848;
+            cursor: pointer;
+        }
+        @media (max-width: 530px) {
+            .main{
+                margin: 2rem;
+                padding: 1rem;
+            }
+            .cards .card {
+                margin: 10px;
+                min-height: 40px;
+                min-width: 60px;
+                line-height: 40px;
+                font-size: .6rem;
+            }
+        }
+        @media (max-width:480px) {
+            .peoples .people{
+                flex-direction: column;
+                height: inherit;
+                min-width: 180px;
+                min-height: 300px;
+            }
+            .peoples .people img{
+                margin: 0px;
+                margin-bottom: 10px;
+            }
+            .peoples .people .text{
+                text-align: center;
+            }
+        }
+        @media (max-width: 360px) {
+            .main{
+                margin: 1rem;
+                padding: .5rem;
+            }
+        }
+    </style>
+
 
     <!-- script
     ================================================== -->
@@ -37,1058 +232,796 @@
     </head>
     
     <body id="top">
-        
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/logo.png" alt="Homepage">
-            </a>
-        </div> <!-- end header-logo -->
-
-        <nav class="header-nav">
-
-            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
-
-            <div class="header-nav__content">
-                <h3 style="font-size:20px">IETE Bits</h3>
-                
-                <ul class="header-nav__list">
-                    <li ><a href="index.html" title="Home">Home</a></li>
-                    <li><a href="https://blog.ietebits.com/" title="Blog">Blogs</a></li>
-                    <li><a href="about.html" title="About Us">About Us</a></li>
-                    <li><a href="members.html" title="Members">Members</a></li>
-                    <li><a href="events.html" title="Events">Events</a></li>
-                    <li><a href="gallery.html" title="Gallery">Gallery</a></li>
-                    <li class="current"><a href="alumni.html" title="Alumni">Our Alumni</a></li>
-                    <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
-                  </ul>
+        <div class="bg">
+            <nav>
+                <img src="./img/iete-logo.png" alt="iete-logo">
+            </nav>
+            <div class="main">
     
-                <p>A positive atmosphere nurtures a positive attitude, which is required to take positive action.</p>
+                <h1>Our Alumni</h1>
     
-                <ul class="header-nav__social">
-                    <li>
-                        <a href="https://www.facebook.com/ietebits/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/iete_bits/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/company/ietebits/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UC8xo4Ru1Pask-hOM7j_YO-Q" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/IETE_BITS" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </li>
-                </ul>
-
-            </div> <!-- end header-nav__content -->
-
-        </nav> <!-- end header-nav -->
-
-        <a class="header-menu-toggle" href="#0">
-            <span class="header-menu-icon"></span>
-        </a>
-
-    </header> <!-- end s-header -->
-    
-     
-    <!-- home
-    ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.png" data-natural-width=3000 data-natural-height=2000 data-position-y=top>
-
-        <div class="shadow-overlay"></div>
-
-        <div class="home-content">
-
-            <div class="home-content__main" style="margin-left: 20%">
-                
-                <h1>
-                    Our Alumni
-                </h1>
-
-                <p>
-                    Our Backbone
-                </p>
-                
-
-
-
-            </div> <!-- end home-content__main -->
-
-        </div> <!-- end home-content -->
-
-        <ul class="home-social">
-            <li class="home-social-title">Follow Us</li>
-            <li><a href="https://www.facebook.com/ietebits/" target="_blank">
-                <i class="fab fa-facebook"></i>
-                <span class="home-social-text">Facebook</span>
-            </a></li>
-            <li><a href="https://www.instagram.com/iete_bits/" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <span class="home-social-text">Instagram</span>
-            </a></li>
-            <li><a href="https://www.linkedin.com/company/ietebits/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                <span class="home-social-text">LinkedIn</span>
-            </a></li>
-            <li><a href="https://www.youtube.com/c/IETEBITSindri" target="_blank">
-                <i class="fab fa-youtube"></i>
-                <span class="home-social-text">YouTube</span>
-            </a></li>
-            <li><a href="https://twitter.com/IETE_BITS" target="_blank">
-                <i class="fab fa-twitter"></i>
-                <span class="home-social-text">Twitter</span>
-            </a></li>
-        </ul> <!-- end home-social -->
-
-        <a href="#about" class="home-scroll smoothscroll">
-            <span class="home-scroll__text">Scroll Down</span>
-            <span class="home-scroll__icon"></span>
-        </a> <!-- end home-scroll -->
-
-    </section> <!-- end s-home -->
-        
-        
-        
-        <!---- Alumni Section ----->
-
-        <section section id='about' class="s-about dark">
-
-
-            <!-- batch 2018 -->
-
-            <h1 style="text-align: center; font-size: 3.6rem; color: whitesmoke;">BATCH 2018</h1>
-                
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Abhishek Pandey.JPG"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Abhishek Pandey</h3>
-                                <p>Edelweiss<br>
-                                    Mumbai </p> 
-                                <p><a href="https://www.linkedin.com/in/abhishekpandey921/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/abhijit.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Abhijit Parshar</h3>
-                                <p>Vedanta <br>
-                                Odisha</p> 
-                                <p><a href="https://www.linkedin.com/in/abhijit-parashar-811b34112/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Nidhi.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Nidhi Kumari</h3>
-                                <p>Deloitte<br>
-                                Hyderabad</p> 
-                                <p><a href="https://www.linkedin.com/in/nidhi-kumari-a4ba70198/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Rumman.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Rumman Akhtar </h3>
-                                <p>Cognizant<br>
-                                Hyderabad</p> 
-                                <p><a href="https://www.linkedin.com/in/rummanakhtar/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!--- End of first row 2018 ---->
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/kiran.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Kiran Kumari</h3>
-                                <p>Deloitte <br>
-                                Bangalore</p>
-                                <p><a href="#Alumni"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Roshan.JPG"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Roshan Kr. Singh</h3>
-                                <p>Samsung<br>
-                                Noida</p> 
-                                <p><a href="https://www.linkedin.com/in/roshan-kumar-singh/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Pallavi.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Pallavi Singh</h3>
-                                <p>Schlumberger  <br>
-                                Pune</p> 
-                                <p><a href="https://www.linkedin.com/in/priyapp/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/shailesh.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Shailesh Aanand</h3>
-                                <p>Google <br>
-                                Bangalore</p> 
-                                <p><a href="https://www.linkedin.com/in/shailesh-aanand/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                </div> <!--- End of Second Row 2018----->
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Deepak.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Deepak Kumar</h3>
-                                <p>Deloitte <br>
-                                    Bangalore</p>
-                                <p><a href="https://www.linkedin.com/in/deepak7870/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Suraj.jpeg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Suraj Kumar Mahato</h3>
-                                <p>NPCI <br>
-                                    Chennai</p>
-                                <p><a href="https://www.linkedin.com/in/suraj-sloth/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/anjali.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Anjali Singh</h3>
-                                <p>PI Industry <br>
-                                    Udaipur</p>
-                                <p><a href="#Alumni"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/iete/2k18/Subhabrata.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Subhabrata Roy </h3>
-                                <p>LnT <br>
-                                    Chennai</p>
-                                <p><a href="https://www.linkedin.com/in/subhabrata-roy-84038b180/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!--- End of batch 2k18 ----->
-
-
-                    <!--- batch 2017----->
-
-            <h1 style="text-align: center; font-size: 3.6rem; color: whitesmoke;">BATCH 2017</h1>
-                
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Saurav.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Saurav Tiwary</h3>
-                                <p>GET<br>
-                                    Tsuisl</p>
-                                <p><a href="https://www.linkedin.com/in/saurav-tiwary-bb022214a/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Kanish.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Kanish Dubey</h3>
-                                <p>GET at JSW Steel ltd,<br>
-                                Panvel, Maharashtra</p>
-                                <p><a href="https://www.linkedin.com/in/kanish-dubey-94610a169/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Shewta.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Sweta Singh</h3>
-                                <p>System Engineer<br>
-                                TCS</p>
-                                <p><a href="https://www.linkedin.com/in/sweta-singh-5b6105194/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/sid.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Siddharth Gupta</h3>
-                                <p>Assistant System Engineer<br>
-                                Girikon</p>
-                                <p><a href="https://www.linkedin.com/in/sidharth19th/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!--- End of first row 2017---->
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Priya.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Priya Saluja</h3>
-                                <p>Assistant System Engineer  <br>
-                                TCS</p>
-                                <p><a href="https://www.linkedin.com/in/priya-saluja-0627791b2/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/roshan1.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Roshan Singh</h3>
-                                <p>R&D  <br>
-                                Samsung</p>
-                                <p><a href="https://www.linkedin.com/in/roshan-singh-ba8965170/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/rashi.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Rashi Agrawal</h3>
-                                <p>Assistant System Engineer  <br>
-                                TCS</p>
-                                <p><a href="https://www.linkedin.com/in/rashi-agarwal-778025174/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/abhi.png"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Abhishek Ranjan</h3>
-                                <p>Management Trainee  <br>
-                                Tata Steel</p>
-                                <p><a href="https://www.linkedin.com/in/ranjan17abhishek/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                </div> <!--- End of Second Row 2017 ----->
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/pallav.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Pallav Tiriyar</h3>
-                                <p>Analyst <br>
-                                    Deloitte</p>
-                                <p><a href="https://www.linkedin.com/in/pallav-tiriyar-0aa09b15a/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Reema.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Reema Bharti</h3>
-                                <p>Associate Full stack Developer <br>
-                                    Schlumberger</p>
-                                <p><a href="https://www.linkedin.com/in/reema-bharti-745793168/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Alice.JPG"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Alice Laguri</h3>
-                                <p>Assistant System Engineer <br>
-                                    TCS</p>
-                                <p><a href="https://www.linkedin.com/in/alice-laguri-4827b6148/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/Nilesh.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Nilesh Tiwary</h3>
-                                <p>ITD <br>
-                                    LTD</p>
-                                <p><a href="#"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                   
-
-                </div> <!----- End of batch 2017 --->
-
-
-                <!-- batch 2016 -->
-
-                <h1 style="text-align: center; font-size: 3.6rem; color: whitesmoke;">BATCH 2016</h1>
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016pratyush.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Pratyush Prashad</h3>
-                                <p>Manager IT <br>
-                                Tata Steel</p>
-                                <br>
-                                <p><a href="https://www.linkedin.com/in/pratyush-prasad-62702013b/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016pushpendra.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Pushpendra Kumar singh</h3>
-                                <p>Manager IT<br>
-                                 Tata Steel</p>
-                                 <br>
-                                <p><a href="#"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016shivank.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Shivank Jaiswal</h3>
-                                <p>Ex-Software Engineer<br>
-                                TIAA </p>
-                                <br>
-                                <p><a href="https://www.linkedin.com/in/shivank-jaiswal-512724181/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016shivam.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Shivam</h3>
-                                <p>Junior Manager<br>
-                                JSW Steel ltd.</p>
-                                <br>
-                                <p><a href="#"><i class="fab fa-linkedin"></i></a></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                </div> <!----- End of first Row 2016 --->
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016abhishek.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Abhishek Ranjan Tiwary</h3>
-                                <p>Lead Engineer<br>
-                                Tata Power</p>
-                                <br>
-                                <p><a href="https://www.linkedin.com/in/abhishek-ranjan-tiwary-318951147/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016sayeesta.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Sayeesta Samrin</h3>
-                                <p>Assistant System Engineer <br> 
-                                TCS </p>
-                                <br>
-                                <p><a href="https://www.linkedin.com/in/sayeesta-samrin-3a509a14b/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016puja.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Puja Singh</h3>
-                                <p>Solution Integrator  <br> Ericsson </p>
-                                <br>
-                                <p><a href="//www.linkedin.com/in/puja-singh-1743411a7/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016priyanka.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Priyanka Tirkey</h3>
-                                <p>Ranchi, <br>
-                                    Jharkhand <br> 
-                                </p>
-                                <br>
-                                <p><a href="#"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                   
-
-                </div> <!----- End of second Row 2016--->
-            
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016shiwani.jfif"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Shiwani Kumari</h3>
-                                <p>Software Developer at<br>
-                                Healthplix</p>
-                                <br>
-                                <p><a href="//www.linkedin.com/in/shiwani-kumari-a46027145/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2016shweta.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Shweta Gupta</h3>
-                                <p>Ex-engineer trainee <br> Sify technology
-                                </p>
-                                <br>
-                                <p><a href="#"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                </div> <!----- End of batch 2016--->
-
-
-                <!-- batch 2015 & before -->
-
-            <h1 style="text-align: center; font-size: 3.6rem; color: whitesmoke;">BATCH 2015 & BEFORE</h1>
-            <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/1.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Chandan Chirag</h3>
-                                <p>Commercial Operations Analyst, SugarCRM<br>
-                                Munich, Germany</p>
-                                <p><a href="https://www.linkedin.com/in/chandanchirag"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/5.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Parimal Roy</h3>
-                                <p>Associate Software Developer, Rakuten India<br>
-                                Bengaluru, India</p>
-                                <p><a href="https://www.linkedin.com/in/parimal-roy/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/6.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Sudarshan Arya</h3>
-                                <p>Senior Software Engineer, Philips Innovation Campus<br>
-                                Bengaluru, 
-                                 India</p>
-                                
-                                <p><a href="https://www.linkedin.com/in/sudarshan366arya/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/4.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Saima Khalid</h3>
-                                <p>Director & Co-founder, WayfarerOWorld Advent Pvt. Ltd.<br>
-                                Delhi, India</p>
-                                <p><a href="https://www.linkedin.com/in/saima-khalid-5985956b/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-            </div> <!----- End of first row 2015 &before--->
-
-
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;"> 
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/3.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Uttam Kushwaha</h3>
-                                <p>Data Scientist, CIMB <br>
-                                Bengaluru, India</p>
-                                <p><a href="https://www.linkedin.com/in/uttam-kushwaha/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/2.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Priyanka Barik</h3>
-                                <p>Technical Analyst <br>
-                                Manhattan Associates</p>
-                                <p><a href="https://www.linkedin.com/in/priyanka-barik-260809a5/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/7.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Priya Jha</h3>
-                                <p>GET at Idea Cellular ltd <br>
-                                Patna, India</p>
-                                <p><a href="https://www.linkedin.com/in/priya-jha-9a96ba105/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/12.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Saurav Sinha</h3>
-                                <p>Associate System Analyst<br>
-                                Gap Inc.</p>
-                                <p><a href="https://www.linkedin.com/in/saurav-kumar-sinha-b59746b4/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>  
-
-                </div> <!----- End of second row 2015 &before--->
-
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-                 
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/9.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Akash Vaibhav</h3>
-                                <p>Design Engineer at STMicroelectronics<br>
-                                Uttar Pradesh,
-                                India</p>
-                                <p><a href="https://www.linkedin.com/in/akash-vaibhav-4a4263118/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/10.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Latika Gupta</h3>
-                                <p>PGP student at Indian Institute of Management, Kozhikode<br>
-                                Hyderabad, India</p>
-                                <p><a href="https://www.linkedin.com/in/latikaambi/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/11.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Sudhanshu Ambastha</h3>
-                                <p>Software Engineer at MakeMyTrip-Goibibo<br>
-                                Ranchi, India </p>
-                                <p><a href="https://www.linkedin.com/in/sudhanshu-ambastha/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/8.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Abhishek Viplavi</h3>
-                                <p>Senior Software Developer at Société Générale<br>
-                                Bengaluru, India</p>
-                                <p><a href="https://www.linkedin.com/in/abhishek-viplavi-22147888/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!----- End of third row 2015 & before--->
-
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/13.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Rishikant Yadav</h3>
-                                <p>Assistant Manager at NTPC Limited<br>
-                                Hazaribagh, India</p>
-                                <p><a href="https://www.linkedin.com/in/rishikant-yadav-115b99101/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/14.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Manish Kumar</h3>
-                                <p>Java , PL-SQL, Oracle Developer, Wipro<br>
-                                Pune, India</p>
-                                
-                                <p><a href="https://www.linkedin.com/in/manish-kumar-ab4a5485/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
- 
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/15.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Sneha Sinha</h3>
-                                <p>Probitionary Officer<br>
-                                State Bank of <br>
-                                 India </p>
-                                
-                                <p><a href="https://www.linkedin.com/in/sneha-kumari-47034b109/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/16.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Kritee Rani</h3>
-                                <p>Student at TISS, Mumbai<br>
-                                Mumbai, <br>
-                                India</p>
-                                
-                                <p><a href="https://www.linkedin.com/in/kritee-rani-74b212101/"><i class="fab fa-linkedin"></i></a></p>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div> <!----- End of fourth row 2015 &before--->
-
-
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/17.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Subham Bose</h3>
-                                <p>Deputy Manager<br>
-                                Tata Steel Processing & Distribution Ltd.</p>
-                                
-                                <p><a href="https://www.linkedin.com/in/subham-bose-bab91610b/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/18.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Anupriya Sheetu</h3>
-                                <p>Business Technology Analyst <br> ZS
-                                </p>
-                                <p><a href="https://www.linkedin.com/in/anupriya-sheetu-11668015a/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/19.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Himanshu Harsh</h3>
-                                <p>Assistant System Engineer <br> Tata Consultancy Services Limited </p>
-                                <p><a href="https://www.linkedin.com/in/himanshu-harsh-ab8a37147/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/20.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Nitya Agrawal</h3>
-                                <p>Technical Analyst <br> Tata Consultancy Services
-                                </p>
-                                <p><a href="https://www.linkedin.com/in/nitya-agrawal-b76a10110/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div> <!----- End of fifth row 2015 &before--->
-
-                <div class="row" data-aos="fade-up" style="width: 100%; max-width:2000px; margin: 30px auto; padding: 0 40px;">
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/21.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Naveen Kumar</h3>
-                                <p>Project Manager at 
-                                Wipro 
-                                 Ltd.</p>
-                                 <br>
-                                
-                                <p><a href="https://www.linkedin.com/in/naveenkumar227/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/22.png"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Jyoti Singh</h3>
-                                <p>Tata Consultancy Services</p>
-                                <br>
-                                <p><a href="https://www.linkedin.com/in/jyoti-singh-1750a7145/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/23.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Rajeev Ranjan</h3>
-                                <p>Delhi, India</p>
-                                <br>
-                                <p><a href="https://www.linkedin.com/in/rajeev-ranjan-raj-14a414121/"><i class="fab fa-linkedin"></i></a></p><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="alumni-card">
-                            <div class="alumni-card-img"><img src="images/alumni/25.jpg"></div>
-                            <div class="alumni-card-info text-center">
-                                <h3>Badal Sahoo</h3>
-                                <p>Software Developer <br> ZS Associates
-                                </p>
-                                <p><a href="https://www.linkedin.com/in/badal-kumar-sahoo-b7b911157/"><i class="fab fa-linkedin"></i></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div> <!----- End of sixth row 2015 &before--->
-        </section>
-        
-        
-    <!-- contact
-    ================================================== -->
-    <section id="contact" class="s-contact" style="padding-left: 10%;">
-
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead subhead--light">Contact Us</h3>
-                <a href="mailto:ietebits@gmail.com" class="contact-email">ietebits@gmail.com</a>
-                <span class="contact-number">+91-7903607014  /  +91-9934438281</span><br><br>
-            </div>
-        </div> <!-- end section-header -->
-
-        <div class="row">
-
-            <div class="col-five tab-full contact-secondary" data-aos="fade-up">
-                <h3 class="subhead subhead--light">Where To Find Us</h3>
-
-                <p class="contact-address">
-                    B.I.T Sindri<br>
-                    828123, Dhanbad<br>
-                    Jharkhand
-                </p>
-            </div> <!-- end contact-secondary -->
-
-            <div class="col-five tab-full contact-secondary" data-aos="fade-up">
-                <h3 class="subhead subhead--light">Follow Us</h3>
-
-                <ul class="contact-social">
-                    <li>
-                        <a href="https://www.facebook.com/ietebits/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/iete_bits/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/company/ietebits/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UC8xo4Ru1Pask-hOM7j_YO-Q" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/IETE_BITS" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </li>
-                </ul> <!-- end contact-social -->
-                <!---
-                <div class="contact-subscribe">
-                    <form id="mc-form" class="group mc-form" novalidate="true">
-                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                        <input type="submit" name="subscribe" value="Subscribe">
-                        <label for="mc-email" class="subscribe-message"></label>
-                    </form>
-                </div>---> <!-- end contact-subscribe -->
-            </div> <!-- end contact-secondary -->
-
-        </div> <!-- end row -->
-
-        <div class="row">
-            <div class="col-full cl-copyright">
-                <span>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | IETE Students' Forum BIT Sindri</span>
-                <span>Design and Developed by : <a href="https:/facebook.com/ranjan17abhishek">Abhishek Ranjan</a> & <a href="https://www.facebook.com/roshanrajput96300">Roshan Singh</a></span>
-            </div>
-        </div>
-
-        <div class="cl-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
-        </div>
-
-    </section> <!-- end s-contact -->
-        
-        
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="cards">
+                    <a class="card active" onclick="fun_2018()" id="btn_2018">Batch 2018</a>
+                    <a class="card" onclick="fun_2017()" id="btn_2017">Batch 2017</a>
+                    <a class="card" onclick="fun_2016()" id="btn_2016">Batch 2016</a>
+                    <a class="card" onclick="fun_2015()" id="btn_2015">Batch 2015</a>
+                    <a class="card" onclick="fun_2014()" id="btn_2014">Batch 2014</a>
+                    <a class="card" onclick="fun_2013()" id="btn_2013">Batch 2013</a>
                 </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
+    
+                
+                <div class="batches">
+    
+                    <!-- 2k13 batch -->
+                    <div class="batch" id="b_2013">
+                        <div class="peoples">
+                            <div class="people">
+                                <img src="./img/Akash.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Akash Vaibhav</p>
+                                    <div class="blur">
+                                        <span>Akash Vaibhav</span>
+                                        <img src="./img/STMicroelectronics.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/akashvbhv/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Working</p>
+                                    <p>STMicroelectronics</p>
+                                    <a href="https://www.linkedin.com/in/akashvbhv/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+    
+                            <div class="people">
+                                <img src="./img/Vikash Kumar.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Vikash Kumar</p>
+                                    <div class="blur">
+                                        <span>Vikash Kumar</span>
+                                        <img src="./img/indian railways.png" class="brand">
+                                        <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Working</p>
+                                    <p>Indian Railways</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 2k14 batch -->
+                    <div class="batch" id="b_2014">
+                        <div class="peoples">
+                            <div class="people">
+                                <img src="./img/img11.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Niraj Kumar</p>
+                                    <div class="blur">
+                                        <span>Niraj Kumar</span>
+                                        <img src="./img/NIT_Jamshedpur.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/niraj-kumar-28b774134"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>PGELT in KEC International</p>
+                                    <p>NIT Jamshedpur</p>
+                                    <a href="https://www.linkedin.com/in/niraj-kumar-28b774134" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Nitya.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Nitya Agrawal</p>
+                                    <div class="blur">
+                                        <span>Nitya Agrawal</span>
+                                        <img src="./img/Nagra.png" class="brand">
+                                        <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Software Engineer</p>
+                                    <p>Nagra Vision Ltd.</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Sudhanshu.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Sudhanshu Ambastha</p>
+                                    <div class="blur">
+                                        <span>Sudhanshu Ambastha</span>
+                                        <img src="./img/bloomreach.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/sudhanshu-ambastha"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Software Engineer</p>
+                                    <p>Bloomreach</p>
+                                    <a href="https://www.linkedin.com/in/sudhanshu-ambastha" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Arvind Marandi.png" class="photo">
+                                <div class="text">
+                                    <p class="name">Arvind Marandi</p>
+                                    <div class="blur">
+                                        <span>Arvind Marandi</span>
+                                        <img src="./img/IIT_Kanpur.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/arvind-marandi/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Higher Studies</p>
+                                    <p>IIT Kanpur</p>
+                                    <a href="https://www.linkedin.com/in/arvind-marandi/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Himanshu Harsh.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Himanshu Harsh</p>
+                                    <div class="blur">
+                                        <span>Himanshu Harsh</span>
+                                        <img src="./img/IIM_Visakhapatnam.png" class="brand">
+                                        <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Higher Studies</p>
+                                    <p>IIM Visakhapatnam</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Navtosh Arun.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Navtosh Arun</p>
+                                    <div class="blur">
+                                        <span>Navtosh Arun</span>
+                                        <img src="" class="brand">
+                                        <a class="link" href="https://in.linkedin.com/in/navtosh-arun"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Preparing for UPSC Civil Services Exam</p>
+                                    <a href="https://in.linkedin.com/in/navtosh-arun" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Parimal Roy.jpeg" class="photo">
+                                <div class="text">
+                                    <p class="name">Parimal Roy</p>
+                                    <div class="blur">
+                                        <span>Parimal Roy</span>
+                                        <img src="./img/Rakuten.png" class="brand">
+                                        <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Data engineer</p>
+                                    <p>Rakuten</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="people">
+                                <img src="./img/Kritee.jpeg" class="photo">
+                                <div class="text">
+                                    <p class="name">Kritee Rani</p>
+                                    <div class="blur">
+                                        <span>Kritee Rani</span>
+                                        <img src="./img/med_science_wardha.png" class="brand">
+                                        <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Executive Assistant</p>
+                                    <p>Datta Meghe Institute of MSci.</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>             
+                            <br>
+                            <div class="people">
+                                <img src="./img/Ashish Kumar Saw.jpeg" class="photo">
+                                <div class="text">
+                                    <p class="name">Ashish Saw</p>
+                                    <div class="blur">
+                                        <span>Ashish Saw</span>
+                                        <img src="./img/icici.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/ashish-kumar-saw-ab2b9212a"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Software engineer</p>
+                                    <p>Icici securities</p>
+                                    <a href="https://www.linkedin.com/in/ashish-kumar-saw-ab2b9212a" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 2k15 Batch -->
+                    <div class="batch" id="b_2015">
+                        <div class="peoples">
+                            <div class="people">
+                                <img src="./img/img5.jpeg" class="photo">
+                                <div class="text">
+                                    <p class="name">Subham Bose</p>
+                                    <div class="blur">
+                                        <span>Subham Bose</span>
+                                        <img src="./img/iimng.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/subham-bose/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Higher Studies</p>
+                                    <p>IIM Nagpur</p>
+                                    <a href="https://www.linkedin.com/in/subham-bose/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img6.jpeg" class="photo">
+                                <div class="text">
+                                    <p class="name">Kundan Kumar</p>
+                                    <div class="blur">
+                                        <span>Kundan Kumar</span>
+                                        <img src="./img/wipro.png" class="brand">
+                                        <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Project engineer</p>
+                                    <p>Wipro</p>
+                                    <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img7.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Rajeev Ranjan Raj</p>
+                                    <div class="blur">
+                                        <span>Rajeev Ranjan Raj</span>
+                                        <img src="./img/jadavpur.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/rajeev-ranjan-raj-14a414121"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Higher Studies</p>
+                                    <p>Jadavpur University, Kolkata </p>
+                                    <a href="https://www.linkedin.com/in/rajeev-ranjan-raj-14a414121" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img8.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Naveen Kumar</p>
+                                    <div class="blur">
+                                        <span>Naveen Kumar</span>
+                                        <img src="./img/cogni.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/naveenkumar227"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Software Engineer</p>
+                                    <p>Cognizant</p>
+                                    <a href="https://www.linkedin.com/in/naveenkumar227" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img9.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Abhishek Tiwari </p>
+                                    <div class="blur">
+                                        <span>Abhishek Tiwari</span>
+                                        <img src="./img/wipro.png" class="brand">
+                                        <a class="link" href="https://in.linkedin.com/in/abhishek-tiwari-b0b3b83a"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Sr. Developer</p>
+                                    <p>Wipro</p>
+                                    <a href="https://in.linkedin.com/in/abhishek-tiwari-b0b3b83a" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img10.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Srijan Bharadwaj</p>
+                                    <div class="blur">
+                                        <span>Srijan Bharadwaj</span>
+                                        <img src="./img/tcs.png" class="brand">
+                                        <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>System engineer - trainee</p>
+                                    <p>TCS</p>
+                                    <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 2k16 Batch -->
+                    <div class="batch" id="b_2016">
+                        <div class="peoples">
+                            <div class="people">
+                                <img src="./img/img1.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Pushpendra Kumar Singh</p>
+                                    <div class="blur">
+                                        <span>Pushpendra Kumar Singh</span>
+                                        <img src="./img/tata.png" class="brand">
+                                        <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>CAM IT RM</p>
+                                    <p>Tata Steel</p>
+                                    <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img2.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Shivank Jaiswal</p>
+                                    <div class="blur">
+                                        <span>Shivank Jaiswal</span>
+                                        <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Higher Studies</p>
+                                    <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img3.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Puja singh</p>
+                                    <div class="blur">
+                                        <span>Puja singh</span>
+                                        <img src="./img/eric.png" class="brand">
+                                        <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Ericsson</p>
+                                    <a class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img4.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Pratyush Prasad</p>
+                                    <div class="blur">
+                                        <span>Pratyush Prasad</span>
+                                        <img src="./img/tata.png" class="brand">
+                                        <a href="https://www.linkedin.com/in/pratyush-prasad-62702013b" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Manager IT</p>
+                                    <p>Tata Steel</p>
+                                    <a href="https://www.linkedin.com/in/pratyush-prasad-62702013b" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="people">
+                                <img src="./img/img24.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Shivam</p>
+                                    <div class="blur">
+                                        <span>Shivam</span>
+                                        <img src="./img/jsw.png" class="brand">
+                                        <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Junior Manager</p>
+                                    <p>JSW Steel Ltd.</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img25.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Abhishek Ranjan Tiwary</p>
+                                    <div class="blur">
+                                        <span>Abhishek Ranjan Tiwary</span>
+                                        <img src="./img/power.jpg" class="brand">
+                                        <a href="https://www.linkedin.com/in/abhishek-ranjan-tiwary-318951147/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Lead Engineer</p>
+                                    <p>Tata Power</p>
+                                    <a href="https://www.linkedin.com/in/abhishek-ranjan-tiwary-318951147/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img26.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Sayeesta Samrin</p>
+                                    <div class="blur">
+                                        <span>Sayeesta Samrin</span>
+                                        <img src="./img/tcs.png" class="brand">
+                                        <a href="https://www.linkedin.com/in/sayeesta-samrin-3a509a14b/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Assistant System Engineer</p>
+                                    <p>TCS</p>
+                                    <a href="https://www.linkedin.com/in/sayeesta-samrin-3a509a14b/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img27.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Priyanka Tirkey</p>
+                                    <div class="blur">
+                                        <span>Priyanka Tirkey</span>
+                                        <img src="" class="brand">
+                                        <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Ranchi, Jharkhand</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img28.jfif" class="photo">
+                                <div class="text">
+                                    <p class="name">Shiwani Kumari</p>
+                                    <div class="blur">
+                                        <span>Shiwani Kumari</span>
+                                        <img src="./img/hplix.PNG" class="brand">
+                                        <a href="https://www.linkedin.com/in/shiwani-kumari-a46027145/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Software Developer</p>
+                                    <p>Healthplix</p>
+                                    <a href="https://www.linkedin.com/in/shiwani-kumari-a46027145/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="people">
+                                <img src="./img/img29.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Shweta Gupta</p>
+                                    <div class="blur">
+                                        <span>Shweta Gupta</span>
+                                        <img src="./img/sify.jpg" class="brand">
+                                        <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Ex-Engineer Trainee</p>
+                                    <p>Sify Technolgy</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 2k17 batch -->
+                    <div class="batch" id="b_2017">
+                        <div class="peoples">
+                            <!-- 1 -->
+                            <div class="people">
+                                <img src="./img/img12.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Saurav Tiwary</p>
+                                    <div class="blur">
+                                        <span>Saurav Tiwary</span>
+                                        <img src="./img/tata.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/saurav-tiwary-bb022214a/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>GET</p>
+                                    <p>Tsuisl</p>
+                                    <a href="https://www.linkedin.com/in/saurav-tiwary-bb022214a/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 2 -->
+                            <div class="people">
+                                <img src="./img/img13.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Kanish Dubey</p>
+                                    <div class="blur">
+                                        <span>Kanish Dubey</span>
+                                        <img src="./img/jsw.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/kanish-dubey-94610a169/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>GET</p>
+                                    <p>JSW Steel Ltd.</p>
+                                    <a href="https://www.linkedin.com/in/kanish-dubey-94610a169/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 3 -->
+                            <div class="people">
+                                <img src="./img/img14.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Sweta Singh</p>
+                                    <div class="blur">
+                                        <span>Shweta Singh</span>
+                                        <img src="./img/tcs.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/sweta-singh-5b6105194/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>System Engineer</p>
+                                    <p>TCS</p>
+                                    <a href="https://www.linkedin.com/in/sweta-singh-5b6105194/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 4 -->
+                            <div class="people">
+                                <img src="./img/img15.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Siddharth Gupta</p>
+                                    <div class="blur">
+                                        <span>Siddharth Gupta</span>
+                                        <img src="./img/girik.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/sidharth19th/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Assistant System Engineer</p>
+                                    <p>Girikon</p>
+                                    <a href="https://www.linkedin.com/in/sidharth19th/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 5 -->
+                            <div class="people">
+                                <img src="./img/img16.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Priya Saluja</p>
+                                    <div class="blur">
+                                        <span>Priya Saluja</span>
+                                        <img src="./img/tcs.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/priya-saluja-0627791b2/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Assistant System Engineer</p>
+                                    <p>TCS</p>
+                                    <a href="https://www.linkedin.com/in/priya-saluja-0627791b2/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 6 -->
+                            <div class="people">
+                                <img src="./img/img17.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Roshan Singh</p>
+                                    <div class="blur">
+                                        <span>Roshan Singh</span>
+                                        <img src="./img/samsung.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/roshan-singh-ba8965170/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>R & D</p>
+                                    <p>Samsung</p>
+                                    <a href="https://www.linkedin.com/in/roshan-singh-ba8965170/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 7 -->
+                            <div class="people">
+                                <img src="./img/img18.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Rashi Agrawal</p>
+                                    <div class="blur">
+                                        <span>Rashi Agrawal</span>
+                                        <img src="./img/tcs.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/rashi-agarwal-778025174/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Assistant System Engineer</p>
+                                    <a href="https://www.linkedin.com/in/rashi-agarwal-778025174/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 8 -->
+                            <div class="people">
+                                <img src="./img/img19.png" class="photo">
+                                <div class="text">
+                                    <p class="name">Abhishek Ranjan</p>
+                                    <div class="blur">
+                                        <span>Abhishek Ranjan</span>
+                                        <img src="./img/tata.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/ranjan17abhishek/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Management trainee</p>
+                                    <p>Tata Steel</p>
+                                    <a href="https://www.linkedin.com/in/ranjan17abhishek/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 9 -->
+                            <div class="people">
+                                <img src="./img/img20.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Pallav Tiriyar</p>
+                                    <div class="blur">
+                                        <span>Pallav Tiriyar</span>
+                                        <img src="./img/Deloitte.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/pallav-tiriyar-0aa09b15a/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Analyst</p>
+                                    <p>Deloitte</p>
+                                    <a href="https://www.linkedin.com/in/pallav-tiriyar-0aa09b15a/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 10 -->
+                            <div class="people">
+                                <img src="./img/img21.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Reema Bharti</p>
+                                    <div class="blur">
+                                        <span>Reema Bharti</span>
+                                        <img src="./img/schlumberger.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/reema-bharti-745793168/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Associate Full Stack Developer</p>
+                                    <p>Schlumberger</p>
+                                    <a href="https://www.linkedin.com/in/reema-bharti-745793168/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 11 -->
+                            <div class="people">
+                                <img src="./img/img22.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Alice Laguri</p>
+                                    <div class="blur">
+                                        <span>Alice Laguri</span>
+                                        <img src="./img/tcs.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/alice-laguri-4827b6148/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Assistant System Engineer</p>
+                                    <p>TCS</p>
+                                    <a href="https://www.linkedin.com/in/alice-laguri-4827b6148/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 12 -->
+                            <div class="people">
+                                <img src="./img/img23.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Nilesh Tiwary</p>
+                                    <div class="blur">
+                                        <span>Nilesh Tiwary</span>
+                                        <img src="./img/ltd.jpg" class="brand">
+                                        <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>ITD</p>
+                                    <p>LTD</p>
+                                    <a href="" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 2k18 batch -->
+                    <div class="batch" id="b_2018">
+                        <div class="peoples">
+                            <!-- 1 -->
+                            <div class="people">
+                                <img src="./img/Abhishek Pandey.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Abhishek Pandey</p>
+                                    <div class="blur">
+                                        <span>Abhishek Pandey</span>
+                                        <img src="./img/edelweiss.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/abhishekpandey921/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Edelweiss</p>
+                                    <a href="https://www.linkedin.com/in/abhishekpandey921/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 2 -->
+                            <div class="people">
+                                <img src="./img/abhijit.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Abhijit Parshar</p>
+                                    <div class="blur">
+                                        <span>Abhijit Parshar</span>
+                                        <img src="./img/Vedanta.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/abhijit-parashar-811b34112/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Vedanta</p>
+                                    <a href="https://www.linkedin.com/in/abhijit-parashar-811b34112/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 3 -->
+                            <div class="people">
+                                <img src="./img/Nidhi.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Nidhi Kumari</p>
+                                    <div class="blur">
+                                        <span>Nidhi Kumari</span>
+                                        <img src="./img/Deloitte.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/nidhi-kumari-a4ba70198/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Deloitte</p>
+                                    <a href="https://www.linkedin.com/in/nidhi-kumari-a4ba70198/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 4 -->
+                            <div class="people">
+                                <img src="./img/Rumman.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Rumman Akhtar</p>
+                                    <div class="blur">
+                                        <span>Rumman Akhtar</span>
+                                        <img src="./img/cogni.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/rummanakhtar/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Cognizant</p>
+                                    <a href="https://www.linkedin.com/in/rummanakhtar/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 5 -->
+                            <div class="people">
+                                <img src="./img/kiran.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Kiran Kumari</p>
+                                    <div class="blur">
+                                        <span>Kiran Kumari</span>
+                                        <img src="./img/Deloitte.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/kiran-kumari-k99/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Deloitte</p>
+                                    <a href="https://www.linkedin.com/in/kiran-kumari-k99/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 6 -->
+                            <div class="people">
+                                <img src="./img/Roshan.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Roshan Kr. Singh</p>
+                                    <div class="blur">
+                                        <span>Roshan Kr. Singh</span>
+                                        <img src="./img/samsung.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/roshan-kumar-singh/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Samsung</p>
+                                    <a href="https://www.linkedin.com/in/roshan-kumar-singh/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 7 -->
+                            <div class="people">
+                                <img src="./img/Pallavi.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Pallavi Singh</p>
+                                    <div class="blur">
+                                        <span>Pallavi Singh</span>
+                                        <img src="./img/schlumberger.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/priyapp/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Schlumberger</p>
+                                    <a href="https://www.linkedin.com/in/priyapp/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 8 -->
+                            <div class="people">
+                                <img src="./img/shailesh.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Shailesh Aanand</p>
+                                    <div class="blur">
+                                        <span>Shailesh Aanand</span>
+                                        <img src="./img/google.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/shailesh-aanand/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Google</p>
+                                    <a href="https://www.linkedin.com/in/shailesh-aanand/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 9 -->
+                            <div class="people">
+                                <img src="./img/Deepak.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Deepak Kumar</p>
+                                    <div class="blur">
+                                        <span>Deepak Kumar</span>
+                                        <img src="./img/Deloitte.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/deepak7870/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>Deloitte</p>
+                                    <a href="https://www.linkedin.com/in/deepak7870/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 10 -->
+                            <div class="people">
+                                <img src="./img/Suraj.jpeg" class="photo">
+                                <div class="text">
+                                    <p class="name">Suraj Kumar Mahato</p>
+                                    <div class="blur">
+                                        <span>Suraj Kumar Mahato</span>
+                                        <img src="./img/NPCI.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/suraj-sloth/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>NPCI</p>
+                                    <a href="https://www.linkedin.com/in/suraj-sloth/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 11 -->
+                            <div class="people">
+                                <img src="./img/anjali.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Anjali Singh</p>
+                                    <div class="blur">
+                                        <span>Anjali Singh</span>
+                                        <img src="./img/pi_industries.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/anjali-singh-506502215/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>PI Industry</p>
+                                    <a href="https://www.linkedin.com/in/anjali-singh-506502215/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- 12 -->
+                            <div class="people">
+                                <img src="./img/Subhabrata.jpg" class="photo">
+                                <div class="text">
+                                    <p class="name">Subhabrata Roy</p>
+                                    <div class="blur">
+                                        <span>Subhabrata Roy</span>
+                                        <img src="./img/L&T.png" class="brand">
+                                        <a class="link" href="https://www.linkedin.com/in/subhabrata-roy-84038b180/"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                    <p>LnT</p>
+                                    <a href="https://www.linkedin.com/in/subhabrata-roy-84038b180/" class="link"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
+    
             </div>
-
         </div>
-
-    </div> <!-- end photoSwipe background -->
-        
         
     <!-- preloader
     ================================================== -->
@@ -1100,7 +1033,110 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </div>
         
-        
+    <script>
+        // getting the batches
+        var b_13 = document.getElementById("b_2013");
+        var b_14 = document.getElementById("b_2014");
+        var b_15 = document.getElementById("b_2015");
+        var b_16 = document.getElementById("b_2016");
+        var b_17 = document.getElementById("b_2017");
+        var b_18 = document.getElementById("b_2018");
+
+        // getting the buttons
+        var btn_13 = document.getElementById("btn_2013");
+        var btn_14 = document.getElementById("btn_2014");
+        var btn_15 = document.getElementById("btn_2015");
+        var btn_16 = document.getElementById("btn_2016");
+        var btn_17 = document.getElementById("btn_2017");
+        var btn_18 = document.getElementById("btn_2018");
+
+        // functions
+        function fun_2013(){
+            b_13.style.transform = "translateX(0%)"
+            b_14.style.transform = "translateX(110%)"
+            b_15.style.transform = "translateX(110%)"
+            b_16.style.transform = "translateX(110%)"
+            b_17.style.transform = "translateX(110%)"
+            b_18.style.transform = "translateX(110%)"
+            btn_13.classList.add("active")
+            btn_14.classList.remove("active")
+            btn_15.classList.remove("active")
+            btn_16.classList.remove("active")
+            btn_17.classList.remove("active")
+            btn_18.classList.remove("active")
+        }
+        function fun_2014(){
+            b_13.style.transform = "translateX(1100%)"
+            b_14.style.transform = "translateX(0%)"
+            b_15.style.transform = "translateX(110%)"
+            b_16.style.transform = "translateX(110%)"
+            b_17.style.transform = "translateX(110%)"
+            b_18.style.transform = "translateX(110%)"
+            btn_13.classList.remove("active")
+            btn_14.classList.add("active")
+            btn_15.classList.remove("active")
+            btn_16.classList.remove("active")
+            btn_17.classList.remove("active")
+            btn_18.classList.remove("active")
+        }
+        function fun_2015(){
+            b_13.style.transform = "translateX(1100%)"
+            b_14.style.transform = "translateX(110%)"
+            b_15.style.transform = "translateX(0%)"
+            b_16.style.transform = "translateX(110%)"
+            b_17.style.transform = "translateX(110%)"
+            b_18.style.transform = "translateX(110%)"
+            btn_13.classList.remove("active")
+            btn_14.classList.remove("active")
+            btn_15.classList.add("active")
+            btn_16.classList.remove("active")
+            btn_17.classList.remove("active")
+            btn_18.classList.remove("active")
+        }
+        function fun_2016(){
+            b_13.style.transform = "translateX(200%)"
+            b_14.style.transform = "translateX(110%)"
+            b_15.style.transform = "translateX(110%)"
+            b_16.style.transform = "translateX(0%)"
+            b_17.style.transform = "translateX(110%)"
+            b_18.style.transform = "translateX(110%)"
+            btn_13.classList.remove("active")
+            btn_14.classList.remove("active")
+            btn_15.classList.remove("active")
+            btn_16.classList.add("active")
+            btn_17.classList.remove("active")
+            btn_18.classList.remove("active")
+        }
+        function fun_2017(){
+            b_13.style.transform = "translateX(200%)"
+            b_14.style.transform = "translateX(110%)"
+            b_15.style.transform = "translateX(110%)"
+            b_16.style.transform = "translateX(110%)"
+            b_17.style.transform = "translateX(0%)"
+            b_18.style.transform = "translateX(110%)"
+            btn_13.classList.remove("active")
+            btn_14.classList.remove("active")
+            btn_15.classList.remove("active")
+            btn_16.classList.remove("active")
+            btn_17.classList.add("active")
+            btn_18.classList.remove("active")
+        }
+        function fun_2018(){
+            b_13.style.transform = "translateX(200%)"
+            b_14.style.transform = "translateX(110%)"
+            b_15.style.transform = "translateX(110%)"
+            b_16.style.transform = "translateX(110%)"
+            b_17.style.transform = "translateX(110%)"
+            b_18.style.transform = "translateX(0%)"
+            btn_13.classList.remove("active")
+            btn_14.classList.remove("active")
+            btn_15.classList.remove("active")
+            btn_16.classList.remove("active")
+            btn_17.classList.remove("active")
+            btn_18.classList.add("active")
+        }   
+    </script>
+
     <!-- Java Script
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
