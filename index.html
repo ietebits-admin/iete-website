@@ -21,6 +21,44 @@
     <link rel="stylesheet" href="css/vendor.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+    @media(max-width: 570px){
+    .bkgM{
+      z-index: .99;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      font-family: 'Bungee Inline', cursive;
+    }
+
+    .bkgM1{  
+      z-index: .99;
+      font-family: 'Bungee Inline', cursive;
+    }
+
+    .bkgM h1{
+      color:white;
+      position: absolute;
+      left: 10vw;
+      top: 15vh;
+      z-index: .99;
+      font-family: 'Bungee Inline', cursive;
+      font-size: 10rem;
+      opacity: .8;
+    }
+    .bkgMh2{
+        z-index: .99;
+        color:white;
+        position: absolute;
+        left: 10vw;
+        top: 35vh;
+        font-family: 'Bungee Inline', cursive;
+        font-size: 5rem;
+        opacity: .8;
+    }
+  }
+    </style>
 
     <!-- script
     ================================================== -->
@@ -52,6 +90,14 @@
         </a>
         
       </div>
+
+      <div class="bkgM">
+        <div class="bkgM1">
+          <h1 style="z-index: -1;">IETE</h1>
+          <h2 class="bkgMh2" style="z-index: -1;">Students' Forum</h2>
+        </div>
+      </div>
+
       <!-- end header-logo -->
 
       <nav class="header-nav">
@@ -116,8 +162,8 @@
       </nav>
       <!-- end header-nav -->
 
-      <a class="header-menu-toggle" href="#0">
-        <span class="header-menu-icon"></span>
+      <a class="header-menu-toggle" href="#0" style="z-index: 2;">
+        <span class="header-menu-icon" style="z-index: 2;"></span>
       </a>
     </header>
     <!-- end s-header -->
