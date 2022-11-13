@@ -1,6 +1,7 @@
-<!DOCKTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-    <head>
+
+<head>
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
@@ -18,57 +19,297 @@
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <style>
-        /* @media(max-width:480px){
-            .s-home.target-section{
-                background: #222;
-            }
-        } */
-
         @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
-    @media(max-width: 570px){
-    .bkgM{
-      z-index: .99;
-      position: relative;
-      height: 100vh;
-      width: 100vw;
-      font-family: 'Bungee Inline', cursive;
-    }
-
-    .bkgM1{  
-      z-index: .99;
-      font-family: 'Bungee Inline', cursive;
-    }
-
-    .bkgM h1{
-      color:white;
-      position: absolute;
-      left: 10vw;
-      top: 15vh;
-      z-index: .99;
-      font-family: 'Bungee Inline', cursive;
-      font-size: 10rem;
-      opacity: .8;
-    }
-    .bkgMh2{
-        z-index: .99;
-        color:white;
-        position: absolute;
-        left: 10vw;
-        top: 35vh;
-        font-family: 'Bungee Inline', cursive;
-        font-size: 5rem;
-        opacity: .8;
-    }
-  }
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98.2%;
+            height: 60px;
+            color: #222;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2em;
+            border-radius: 8px;
+            margin: 1rem;
+            margin-left: .9%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-family: "metropolis-regular", sans-serif;
+            /* font-size: 1.6rem; */
+        }
+        
+        .top-navbar .top-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-navbar .top-logo img {
+            height: 40px;
+        }
+        
+        .top-navbar .top-logo .text-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 2rem;
+        }
+        
+        .top-navbar .top-links ul {
+            display: flex;
+            position: relative;
+        }
+        
+        .top-navbar .top-links ul li {
+            /* position: relative; */
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+        }
+        
+        .top-navbar .top-links ul li a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .top-navbar .top-links ul li a .icon {
+            display: block;
+            line-height: 90px;
+            font-size: 2rem;
+            text-align: center;
+            transition: .5s;
+            color: rgb(19, 5, 93);
+            transform: translateY(0px);
+        }
+        
+        .top-navbar .top-links ul li.active a .icon,
+        .top-navbar .top-links ul li:hover a .icon {
+            transform: translateY(30px);
+            color: #fff;
+        }
+        
+        .top-navbar .top-links ul li a .text {
+            position: absolute;
+            top: 20px;
+            transition: .5s;
+            opacity: 0;
+            color: rgb(19, 5, 93);
+            font-size: .85em;
+            font-weight: bold;
+        }
+        
+        .top-navbar .top-links ul li.active a .text,
+        .top-navbar .top-links ul li:hover a .text {
+            opacity: 1;
+        }
+        
+        .top-navbar .top-links ul .indicator {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(19, 5, 93);
+            top: 80%;
+            left: 240px;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .top-navbar .top-links ul li:nth-child(1):hover~.indicator {
+            transform: translateX(calc(60px * -4));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(2):hover~.indicator {
+            transform: translateX(calc(60px * -3));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(3):hover~.indicator {
+            transform: translateX(calc(60px * -2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(4):hover~.indicator {
+            transform: translateX(calc(60px * -1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(5):hover~.indicator {
+            transform: translateX(calc(60px * 0));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(6):hover~.indicator {
+            transform: translateX(calc(60px * 1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(7):hover~.indicator {
+            transform: translateX(calc(60px * 2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(8):hover~.indicator {
+            transform: translateX(calc(60px * 3));
+        }
+        
+        .top-navbar .top-bar {
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        @media (max-width: 700px) {
+            .top-navbar {
+                box-shadow: none;
+                z-index: 1001;
+            }
+            .top-navbar.radius {
+                border-radius: 8px 8px 0px 0px;
+            }
+            .top-navbar .top-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-radius: 0px 0px 8px 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: none;
+                transition: .5s;
+            }
+            .top-navbar .top-links ul {
+                flex-direction: column;
+            }
+            .top-navbar .top-links ul li {
+                height: 50px;
+            }
+            .top-navbar .top-links ul .indicator {
+                display: none;
+            }
+            .top-navbar .top-links ul li a {
+                flex-direction: row;
+            }
+            .top-navbar .top-links ul li a .icon {
+                line-height: 50px;
+                display: inline;
+                transform: translateY(0px);
+            }
+            .top-navbar .top-links ul li a .text {
+                transform: translateY(-8px);
+                left: 70px;
+                opacity: 1;
+            }
+            .top-navbar .top-links ul li.active a .icon,
+            .top-navbar .top-links ul li:hover a .icon {
+                transform: translateY(5px);
+                color: rgb(19, 5, 93);
+            }
+            .top-navbar .top-bar {
+                display: initial;
+            }
+            .top-navbar .top-links.show {
+                display: initial;
+            }
+        }
     </style>
     <style>
-        @media (max-width:570px){
-        #home{
-            background-color: black;
+        @media (max-width:570px) {
+            #home {
+                background-color: black;
+            }
         }
-    }
-      </style>
+    </style>
+    <style>
+        .new-box {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        
+        .new-card {
+            position: relative;
+            width: 380px;
+            height: 320px;
+            background: #2b2b2b;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 1rem;
+        }
+        
+        .new-card::before,
+        .new-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            background: #2b2b2b;
+            transition: .5s;
+            z-index: -1;
+        }
+        
+        .new-card:hover::before {
+            transform: rotate(20deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .new-card:hover::after {
+            transform: rotate(10deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .new-card .imgbox {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: #222;
+            transition: .5s;
+            z-index: 1;
+        }
+        
+        .new-card .imgbox img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; */
+        }
+        
+        .new-card .detailbox {
+            position: absolute;
+            padding: 10px;
+            top: 45%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        
+        .new-card:hover .imgbox {
+            bottom: 310px;
+            transform: scale(1);
+        }
+        
+        .detailbox .h4 {
+            color: #a1a1a1;
+        }
+        
+        .detailbox p {
+            font-size: 15px;
+            color: white;
+        }
+    </style>
+
 
 
     <!-- script
@@ -82,173 +323,182 @@
     <link rel="icon" href="iete.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="iete.ico" type="image/x-icon" />
     <link rel="icon" href="iete.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
 
-    </head>
-    
-    <body id="top">
-        
+</head>
+
+<body id="top">
+
     <!-- header
     ================================================== -->
     <header class="s-header">
 
-        <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/logo.png" alt="Homepage">
-            </a>
-        </div> 
-        
-        <div class="bkgM">
-            <div class="bkgM1">
-              <h1 style="z-index: -1;">IETE</h1>
-              <h2 class="bkgMh2" style="z-index: -1;">Students' Forum</h2>
+        <div class="top-navbar" id="top-navbar">
+            <div class="top-logo">
+                <img src="./img/iete-logo.png" alt="">
+                <div class="text-logo">IETE</div>
             </div>
-          </div>
-        <!-- end header-logo -->
-
-        <nav class="header-nav">
-
-            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
-
-            <div class="header-nav__content">
-                <h3 style="font-size:20px">IETE Bits</h3>
-                
-                <ul class="header-nav__list">
-                    <li><a href="index.html" title="Home">Home</a></li>
-                    <li><a href="https://blog.ietebits.com/" title="Blog">Blogs</a></li>
-                    <li><a href="about.html" title="About Us">About Us</a></li>
-                    <li><a href="members.html" title="Members">Members</a></li>
-                    <li class="current"><a href="events.html" title="Events">Events</a></li>
-                    <li><a href="gallery.html" title="Gallery">Gallery</a></li>
-                    <li><a href="alumni.html" title="Alumni">Our Alumni</a></li>
-                    <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
-                  </ul>
-    
-                <p>A positive atmosphere nurtures a positive attitude, which is required to take positive action.</p>
-    
-                <ul class="header-nav__social">
-                    <li>
-                        <a href="https://www.facebook.com/ietebits/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <div class="top-links" id="top-links">
+                <ul>
+                    <li class="top-link">
+                        <a href="index.html">
+                            <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+                            <span class="text">Home</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://www.instagram.com/ietebits/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <li class="top-link">
+                        <a href="https://blog.ietebits.com/">
+                            <span class="icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                            <span class="text">Blogs</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <li class="top-link">
+                        <a href="about.html">
+                            <span class="icon"><i class="fa-solid fa-info"></i></span>
+                            <span class="text">About</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UC8xo4Ru1Pask-hOM7j_YO-Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <li class="top-link">
+                        <a href="members.html">
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="text">Members</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://twitter.com/IETE_BITS" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <li class="top-link active">
+                        <a href="events.html">
+                            <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
+                            <span class="text">Events</span>
+                        </a>
                     </li>
+                    <li class="top-link">
+                        <a href="gallery.html">
+                            <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
+                            <span class="text">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="alumni.html">
+                            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="text">Alumni</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="contact.html">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
                 </ul>
+            </div>
+            <div class="top-bar" id="top-bar">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
 
-            </div> <!-- end header-nav__content -->
+    </header>
+    <!-- end s-header -->
 
-        </nav> <!-- end header-nav -->
 
-        <a class="header-menu-toggle" href="#0">
-            <span class="header-menu-icon"></span>
-        </a>
-
-    </header> <!-- end s-header -->
-    
-     
     <!-- home
     ================================================== -->
-    <section
-      id="home"
-      class="s-home target-section"
-      data-parallax="scroll"
-      data-natural-width="3000"
-      data-natural-height="1850"
-      data-position-y="top"
-    >
-      <div class="shadow-overlay"></div>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="1850" data-position-y="top">
+        <div class="shadow-overlay"></div>
         <div class="home-content">
 
             <div class="row home-content__main">
-                
+
                 <h1>
                     Our Events
                 </h1>
 
                 <p>
-                Tech Udbhav
+                    Tech Udbhav
                 </p>
-            </div> <!-- end home-content__main -->
+            </div>
+            <!-- end home-content__main -->
 
-        </div> <!-- end home-content -->
+        </div>
+        <!-- end home-content -->
 
         <ul class="home-social">
             <li class="home-social-title">Follow Us</li>
-            <li><a href="https://www.facebook.com/ietebits/" target="_blank">
-                <i class="fab fa-facebook"></i>
-                <span class="home-social-text">Facebook</span>
-            </a></li>
-            <li><a href="https://www.instagram.com/ietebits/" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <span class="home-social-text">Instagram</span>
-            </a></li>
-            <li><a href="https://www.linkedin.com/company/42721036/admin/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                <span class="home-social-text">LinkedIn</span>
-            </a></li>
+            <li>
+                <a href="https://www.facebook.com/ietebits/" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <span class="home-social-text">Facebook</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/ietebits/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span class="home-social-text">Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="home-social-text">LinkedIn</span>
+                </a>
+            </li>
             <li>
                 <a href="https://www.youtube.com/c/IETEBITSindri" target="_blank">
-                  <i class="fab fa-youtube"></i>
-                  <span class="home-social-text">YouTube</span>
+                    <i class="fab fa-youtube"></i>
+                    <span class="home-social-text">YouTube</span>
                 </a>
             </li>
             <li>
                 <a href="https://twitter.com/IETE_BITS" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                  <span class="home-social-text">Twitter</span>
+                    <i class="fab fa-twitter"></i>
+                    <span class="home-social-text">Twitter</span>
                 </a>
             </li>
-        </ul> <!-- end home-social -->
+        </ul>
+        <!-- end home-social -->
 
         <a href="#services" class="home-scroll smoothscroll">
             <span class="home-scroll__text">Scroll Down</span>
             <span class="home-scroll__icon"></span>
-        </a> <!-- end home-scroll -->
+        </a>
+        <!-- end home-scroll -->
 
-    </section> <!-- end s-home -->
-      
-        
+    </section>
+    <!-- end s-home -->
+
+
     <!-- services
     ================================================== -->
     <section id='services' class="s-services light-gray">
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
-                
+
                 <h1 class="display-1">Tech Udbhav</h1>
             </div>
-        </div> <!-- end section-header -->
+        </div>
+        <!-- end section-header -->
         <img src="images/tech-udbhav/techudbhav.png" class="tech-udbhav-img" alt="Tech Udbhav" data-aos="fade-up"><br>
 
         <div class="row" data-aos="fade-up">
             <div class="col-half text-center">
                 <p class="lead">
-                Tech Udbhav is Annual Techno-Management Fest of BIT Sindri which is organised by IETE Students' Forum, BIT Sindri. Tech Udbhav consists of a number of events for students to participate into it. These events are specially choosen and designed for the students so that they can use and enhance their Technical and Managerial skills and win exiciting prizes.
+                    Tech Udbhav is Annual Techno-Management Fest of BIT Sindri which is organised by IETE Students' Forum, BIT Sindri. Tech Udbhav consists of a number of events for students to participate into it. These events are specially choosen and designed for the
+                    students so that they can use and enhance their Technical and Managerial skills and win exiciting prizes.
                 </p>
             </div>
             <div class="col-half text-center">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/bxQhbOhII6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <h3 style="margin-top: 10px;">Tech Udbhav'19 Glimpses</h3>
             </div>
-        </div><hr/><br> <!-- end about-desc -->
-        
+        </div>
+        <hr /><br>
+        <!-- end about-desc -->
+
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">Tech Udbhav Events</h3>
@@ -256,13 +506,13 @@
             </div>
         </div>
 
-        <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
+        <div class="new-box">
 
-            <div class="col-block service-item " data-aos="fade-up">
-                <div class="service-icon service-icon--brand-identity">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images/tech-udbhav/insight.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Insight</h3>
                     <p>Insight is a technical paper presentation, where participants have to submit an abstract of the TPP on the latest technical topics and Top 10 participants are selected for the final round.
                     </p>
@@ -270,11 +520,11 @@
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon  service-icon--illustration">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images/tech-udbhav/byb.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Byte The Bits</h3>
                     <p>Byte The Bits is Online/Offline coding competition where students from other colleges can also participate and get a chance to win exciting prizes.
                     </p>
@@ -282,11 +532,11 @@
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon  service-icon--web-design">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images/tech-udbhav/tech-expo.png" class="tech-udbhav-events-img">
-                </div>  
-                <div class="service-text">
+                </div>
+                <div class="detailbox">
                     <h3 class="h4">Tech Expo</h3>
                     <p>It is a model making event where working model of participants are presented before a panel of judges.
                     </p>
@@ -294,207 +544,212 @@
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon service-icon--product-strategy">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images/tech-udbhav/mrandmiss.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Mr & Miss Technocrat</h3>
                     <p>It's the flagship event of Tech Udbhav where students compete with each other to be the techno-management face of the college.
                     </p>
-                    <p>Check out previous year's <a href="resources/MrAndMiss19.pdf" target="_blank">rulebook</a></p>
+                    <p>Check out previous year's <a href="resources/MrAndMiss19.pdf" target="_blank">rulebook</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon  service-icon--ui-design">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images/tech-udbhav/scr.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Robo Soccer</h3>
                     <p>One of the most exciting events of Tech Udbhav where bots play a game of soccer and try to score as many goals as they can.
                     </p>
-                    <p>Check out previous year's <a href="resources/RoboSoccer19.pdf" target="_blank">rulebook</a></p>
+                    <p>Check out previous year's <a href="resources/RoboSoccer19.pdf" target="_blank">rulebook</a>
+                    </p>
                 </div>
             </div>
-    
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon service-icon--mobile-dev">
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images/tech-udbhav/foy.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Franchise of The Year</h3>
                     <p>Introduced last year the most popular event of Tech Udbhav where participants get a chance to be a franchise of an IPL team and have to contrusct the strongest team with the least resources.
                     </p>
                     <p>Check out previous year's <a href="resources/FranchiseOfTheYear19.pdf" target="_blank">rulebook</a></p>
                 </div>
-            </div><hr/><br>
+            </div>
+        </div>
+        <hr /><br>
 
-            <div class="row section-header" data-aos="fade-up">
-                <div class="col-full">
-                    <h3 class="subhead">2k21 Events</h3>
-                    <h1 class="display-1"></h1>
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">2k21 Events</h3>
+                <h1 class="display-1"></h1>
+            </div>
+        </div>
+
+        <div class="new-box">
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images/2k21_events/web1.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Webinar on CP and DSA</h3>
+                    <p>IETE Students' Forum and Career Development Center, BIT Sindri organized an informative webinar on CP and DSA. Mr. Shyam Kumar Singh from batch 2K18 who is currently placed in Amazon shared his immense knowledge and experience to help
+                        guide all the viewers regarding their programming journey.
+                    </p>
                 </div>
             </div>
 
-            <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
-
-                <div class="col-block service-item " data-aos="fade-up">
-                    <div class="service-icon service-icon--brand-identity">
-                        <img src="images/2k21_events/web1.jpg" class="tech-udbhav-events-img"
-                        style="height:263.88px; width:413.33px;">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Webinar on CP and DSA</h3>
-                        <p>IETE Students' Forum and Career Development Center, BIT Sindri organized an informative webinar on CP and DSA. Mr. Shyam Kumar Singh from batch 2K18 who is currently placed in Amazon shared his immense knowledge and experience to help guide all the viewers regarding their programming journey. 
-                        </p>
-                    </div>
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images/2k21_events/webinar 2.png" class="tech-udbhav-events-img">
                 </div>
-
-                <div class="col-block service-item " data-aos="fade-up">
-                    <div class="service-icon service-icon--brand-identity">
-                        <img src="images/2k21_events/webinar 2.png" class="tech-udbhav-events-img"
-                        style="height: 263.88px; width: 413.33px;">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Webinar on "How to crack product based companies?"</h3>
-                        <p>IETE Students' Forum presented a golden opportunity,
-                             in the form of a webinar,to aspiring coders who dream to land a job in a product based comapny.
-                             Mr. Monu Kumar, an expert at Coding Blocks, took up the task to provide the viewers with a detailed rodmap to a career in software engineering.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-block service-item " data-aos="fade-up">
-                    <div class="service-icon service-icon--brand-identity">
-                        <img src="images/2k21_events/Inquizitive.jpg" class="tech-udbhav-events-img"
-                        style="height: 263.88px; width: 413.33px;">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Inquizitive</h3>
-                        <p>IETE Students' Forum organised an exhilarating quiz competition named "Inquizitive", to enable the participants to showcase their command in tech. The quiz included topics like SQL, HTML and logical reasoning.There was a massive  number of participants who came forward to test themselves. Exciting prizes were awarded to the winners.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-block service-item " data-aos="fade-up">
-                    <div class="service-icon service-icon--brand-identity">
-                        <img src="images\2k21_events\Udyamita.jpg" class="tech-udbhav-events-img"
-                        style="height: 263.88px; width: 413.33px;">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Udyamita</h3>
-                        <p>IETE Students' Forum, BIT Sindri and E-Cell, BIT Sindri in collaboration with IIM Ranchi had organized an amazing webinar, "UDYAMITA". It was a two day webinar on Entrepreneurship and IPR. We had Mr. Kamlesh Chauhan and Dimple Parmaar as our prominent guest speakers who delivered various points on the topic.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-block service-item " data-aos="fade-up">
-                    <div class="service-icon service-icon--brand-identity">
-                        <img src="images\2k21_events\explicar.png" class="tech-udbhav-events-img"
-                        style="height: 263.88px; width: 413.33px;">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Explicar</h3>
-                        <p>EXPLICAR is a one-day fun tech event that tests a person's understanding of the scientific 
-                            concept used in a certain scene of a science fiction (Sci-Fi) movie/series/anime like Interstellar, 
-                            Tenet, Avengers, The Expanse, Dark, Steins, etc. It's a fiesta for the lovers of Sci-Fi genre.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="col-block service-item" data-aos="fade-up">
-                    <div class="service-icon  service-icon--illustration">
-                        <img src="images\2k21_events\hackl.png" class="tech-udbhav-events-img"
-                        style="height: 263.88px; width: 413.33px;">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Hacklane</h3>
-                        <p>The webinar 'HACKLANE' ended with a massive ascendancy.All the sessions were highly enlightening for the attendees and the viewers. The workshop aimed to make this an eminent opportunity to grab knowledge and prosper skills in ethical hacking. It focused on Security intelligence, SQL injection, and how to make a career in all this. 
-                        </p>
-                        
-                    </div>
-                </div>  
-             
-            </div><hr/><br>
-
-            <div class="row section-header" data-aos="fade-up">
-                <div class="col-full">
-                    <h3 class="subhead">2k20 Events</h3>
-                    <h1 class="display-1"></h1>
+                <div class="detailbox">
+                    <h3 class="h4">Webinar on "How to crack product based companies?"</h3>
+                    <p>IETE Students' Forum presented a golden opportunity, in the form of a webinar,to aspiring coders who dream to land a job in a product based comapny. Mr. Monu Kumar, an expert at Coding Blocks, took up the task to provide the viewers
+                        with a detailed rodmap to a career in software engineering.
+                    </p>
                 </div>
             </div>
-    
-            <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
-    
-                <div class="col-block service-item " data-aos="fade-up">
-                    <div class="service-icon service-icon--mobile-dev">
-                        <img src="images\2k20 _events\API.jpg" class="tech-udbhav-events-img">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Worksop on API 101</h3>
-                        <p>In collaboration with POSTMAN a workshop on Application Programming Interface. The workshop aimed to incite tech-geeks to upskill themselves by acquiring a deep knowledge of APIs from scratch by our mentors. Hands-on session to make requests, test APIs & develop APIs. 
-                        </p>
-                    </div> 
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images/2k21_events/Inquizitive.jpg" class="tech-udbhav-events-img">
                 </div>
-    
-                <div class="col-block service-item" data-aos="fade-up">
-                    <div class="service-icon  service-icon--ui-design">
-                        <img src="images\2k20 _events\neXus.jpg" class="tech-udbhav-events-img">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">neXus</h3>
-                        <p>The event was a fiesta for web developers where they had to make a fronted website and host it. It gave students' an opportunity to show their skills and to shine among such a large crowd.  
-                        </p>
-                        <p>Check out previous year's <a href="https://nexus.ietebits.com/blog/simple-blog-post-2/" target="_blank">rulebook</a></p>
-                    </div> 
+                <div class="detailbox">
+                    <h3 class="h4">Inquizitive</h3>
+                    <p>IETE Students' Forum organised an exhilarating quiz competition named "Inquizitive", to enable the participants to showcase their command in tech. The quiz included topics like SQL, HTML and logical reasoning.There was a massive number
+                        of participants who came forward to test themselves. Exciting prizes were awarded to the winners.
+                    </p>
                 </div>
-    
-                <div class="col-block service-item" data-aos="fade-up">
-                    <div class="service-icon service-icon--product-strategy">
-                        <img src="images\2k20 _events\Wordpress.jpg" class="tech-udbhav-events-img">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Workshop on WordPress</h3>
-                        <p>Workshop on WordPress and its day-to-day uses by our eloquent speaker Mr. Sagar Mondal (Founder & Growth Head of SquashCode). The session made us aware of simply putting a static design and engaging websites to attract more viewers.
-                        </p>
-                    </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k21_events\Udyamita.jpg" class="tech-udbhav-events-img">
                 </div>
-    
-                <div class="col-block service-item" data-aos="fade-up">
-                    <div class="service-icon  service-icon--web-design">
-                        <img src="images\2k20 _events\WebDev.jpg" class="tech-udbhav-events-img">
-                    </div>  
-                    <div class="service-text">
-                        <h3 class="h4">Workshop on WebDev</h3>
-                        <p>Workshop on web development wherein students got in-depth analysis of HTML, CSS, JavaScript, Git and GitHub. The participants also got the opportunity to host their own portfolio website live during the workshop.
-                        </p>
-            
-                    </div>
+                <div class="detailbox">
+                    <h3 class="h4">Udyamita</h3>
+                    <p>IETE Students' Forum, BIT Sindri and E-Cell, BIT Sindri in collaboration with IIM Ranchi had organized an amazing webinar, "UDYAMITA". It was a two day webinar on Entrepreneurship and IPR. We had Mr. Kamlesh Chauhan and Dimple Parmaar
+                        as our prominent guest speakers who delivered various points on the topic.
+                    </p>
                 </div>
-    
-                <div class="col-block service-item" data-aos="fade-up">
-                    <div class="service-icon  service-icon--illustration">
-                        <img src="images\2k20 _events\Ecrire.jpg" class="tech-udbhav-events-img">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Écrire</h3>
-                        <p>Ecrire the blogg-o-battle tested the blogging talent of the students on technical topics. Through this event the participants got the opportunity to sharpen their blogging skills and also learn from the blogs of other participants.
-                        </p>
-                        <p>Check out previous year's <a href="https://ecrire.ietebits.com/posts/1/#rulebook" target="_blank">rulebook</a></p>
-                    </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k21_events\explicar.png" class="tech-udbhav-events-img">
                 </div>
-        
-                <div class="col-block service-item" data-aos="fade-up">
-                    <div class="service-icon service-icon--brand-identity">
-                        <img src="images\2k20 _events\Webinar.jpg" class="tech-udbhav-events-img">
-                    </div>
-                    <div class="service-text">
-                        <h3 class="h4">Webinar Series</h3>
-                        <p>Webinar Series was conducted on various topics like Microservices Architecture and its Advantages, VLSI Industry, Optical Fibres and its applications, Career Tips-Early Decisions and COVID, Introduction to Machine Learning and Blockchain to guide the students about the various trending aspects. 
-                        </p>
-                    </div>
-                </div><hr/><br>
+                <div class="detailbox">
+                    <h3 class="h4">Explicar</h3>
+                    <p>EXPLICAR is a one-day fun tech event that tests a person's understanding of the scientific concept used in a certain scene of a science fiction (Sci-Fi) movie/series/anime like Interstellar, Tenet, Avengers, The Expanse, Dark, Steins,
+                        etc. It's a fiesta for the lovers of Sci-Fi genre.
+                    </p>
+                </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k21_events\hackl.png" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Hacklane</h3>
+                    <p>The webinar 'HACKLANE' ended with a massive ascendancy.All the sessions were highly enlightening for the attendees and the viewers. The workshop aimed to make this an eminent opportunity to grab knowledge and prosper skills in ethical
+                        hacking. It focused on Security intelligence, SQL injection, and how to make a career in all this.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <hr /><br>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">2k20 Events</h3>
+                <h1 class="display-1"></h1>
+            </div>
+        </div>
+
+        <div class="new-box">
+
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k20 _events\API.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Worksop on API 101</h3>
+                    <p>In collaboration with POSTMAN a workshop on Application Programming Interface. The workshop aimed to incite tech-geeks to upskill themselves by acquiring a deep knowledge of APIs from scratch by our mentors. Hands-on session to make
+                        requests, test APIs & develop APIs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k20 _events\neXus.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">neXus</h3>
+                    <p>The event was a fiesta for web developers where they had to make a fronted website and host it. It gave students' an opportunity to show their skills and to shine among such a large crowd.
+                    </p>
+                    <p>Check out previous year's <a href="https://nexus.ietebits.com/blog/simple-blog-post-2/" target="_blank">rulebook</a></p>
+                </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k20 _events\Wordpress.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Workshop on WordPress</h3>
+                    <p>Workshop on WordPress and its day-to-day uses by our eloquent speaker Mr. Sagar Mondal (Founder & Growth Head of SquashCode). The session made us aware of simply putting a static design and engaging websites to attract more viewers.
+                    </p>
+                </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k20 _events\WebDev.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Workshop on WebDev</h3>
+                    <p>Workshop on web development wherein students got in-depth analysis of HTML, CSS, JavaScript, Git and GitHub. The participants also got the opportunity to host their own portfolio website live during the workshop.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k20 _events\Ecrire.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Écrire</h3>
+                    <p>Ecrire the blogg-o-battle tested the blogging talent of the students on technical topics. Through this event the participants got the opportunity to sharpen their blogging skills and also learn from the blogs of other participants.
+                    </p>
+                    <p>Check out previous year's <a href="https://ecrire.ietebits.com/posts/1/#rulebook" target="_blank">rulebook</a></p>
+                </div>
+            </div>
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
+                    <img src="images\2k20 _events\Webinar.jpg" class="tech-udbhav-events-img">
+                </div>
+                <div class="detailbox">
+                    <h3 class="h4">Webinar Series</h3>
+                    <p>Webinar Series was conducted on various topics like Microservices Architecture and its Advantages, VLSI Industry, Optical Fibres and its applications, Career Tips-Early Decisions and COVID, Introduction to Machine Learning and Blockchain
+                        to guide the students about the various trending aspects.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr /><br>
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
@@ -503,87 +758,94 @@
             </div>
         </div>
 
-        <div class="row services-list block-1-3 block-m-1-2 block-tab-full">
+        <div class="new-box">
 
-            <div class="col-block service-item " data-aos="fade-up">
-                <div class="service-icon service-icon--brand-identity">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images\2k19_events\PUBG.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">PUBG Championship</h3>
-                    <p>An in-house gaming event for first years where the compete in a mobile platform game as teams. Sometimes, college life becomes too dull. So, we bring this recreational event in which the gamers participate and play to win. The winners get the title of PUBG Champion of the Campus.
+                    <p>An in-house gaming event for first years where the compete in a mobile platform game as teams. Sometimes, college life becomes too dull. So, we bring this recreational event in which the gamers participate and play to win. The winners
+                        get the title of PUBG Champion of the Campus.
                     </p>
-                    
+
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon  service-icon--illustration">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images\2k19_events\unicorn.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Unicorn</h3>
                     <p>An event for the entrepreneur within you, to present your ideas in the form of an interesting app. An innovative belvedere to check the inventive mind within you.
                     </p>
-                    <p>Check out previous year's <a href="resources\Unicorn.pdf" target="_blank">rulebook</a></p>
+                    <p>Check out previous year's <a href="resources\Unicorn.pdf" target="_blank">rulebook</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon  service-icon--web-design">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images\2k19_events\Seminar.jpg" class="tech-udbhav-events-img">
-                </div>  
-                <div class="service-text">
+                </div>
+                <div class="detailbox">
                     <h3 class="h4">Seminar</h3>
                     <p>A seminar on semiconductor industry was conducted.The seminar was presided over by Akash Vaibhav. Various aspects of semiconductor industry were discussed.
                     </p>
-                    
+
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon service-icon--product-strategy">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images\2k19_events\Graffiti.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Graffiti</h3>
-                    <p>A poster designing event on the theme of Space technology.It took creativity to a whole lot new level with a technical twist.
-                        The entries received were astounding and the event ended with a colossal triumph.
+                    <p>A poster designing event on the theme of Space technology.It took creativity to a whole lot new level with a technical twist. The entries received were astounding and the event ended with a colossal triumph.
                     </p>
-                    <p>Check out previous year's <a href="resources\graffiti_rule.jpg" target="_blank">rulebook</a></p>
+                    <p>Check out previous year's <a href="resources\graffiti_rule.jpg" target="_blank">rulebook</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon  service-icon--ui-design">
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images\2k19_events\Ekryptics.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Ekryptics</h3>
-                    <p>Ekryptics is an online Puzzle/Quiz competition based on Technical and General Awareness Topics. It was a platform to showcase your technical plus logical wit that could lead you up to the edge behind the horizon. One needed to connect the links and skeptically answer the question.
-                        
+                    <p>Ekryptics is an online Puzzle/Quiz competition based on Technical and General Awareness Topics. It was a platform to showcase your technical plus logical wit that could lead you up to the edge behind the horizon. One needed to connect
+                        the links and skeptically answer the question.
+
                     </p>
-                    
+
                 </div>
             </div>
-    
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon service-icon--mobile-dev">
+
+            <div class="new-card" data-aos="fade-up">
+                <div class="imgbox">
                     <img src="images\2k19_events\TechVaganza.jpg" class="tech-udbhav-events-img">
                 </div>
-                <div class="service-text">
+                <div class="detailbox">
                     <h3 class="h4">Tech Vaganza</h3>
-                    <p>A online information campaign regarding new technologies. A series of such updates and trends from the world of technology, applied science and physics in an effort to see the world through the binoculars of revolutionary ideas and Technological achievements of the 21st century.
+                    <p>A online information campaign regarding new technologies. A series of such updates and trends from the world of technology, applied science and physics in an effort to see the world through the binoculars of revolutionary ideas and
+                        Technological achievements of the 21st century.
                     </p>
-                    
+
                 </div>
-            </div><hr/><br>
-        </div> <!-- end services-list -->
+            </div>
+        </div>
+        <hr /><br>
+        <!-- end services-list -->
 
-    </section> <!-- end s-services -->    
+    </section>
+    <!-- end s-services -->
 
-        
-        
+
+
     <!-- contact
     ================================================== -->
     <section id="contact" class="s-contact">
@@ -592,9 +854,10 @@
             <div class="col-full">
                 <h3 class="subhead subhead--light">Contact Us</h3>
                 <a href="mailto:ietebits@gmail.com" class="contact-email">ietebits@gmail.com</a>
-                <span class="contact-number">+91-7903607014  /  +91-9934438281</span><br><br>
+                <span class="contact-number">+91-7903607014 / +91-9934438281</span><br><br>
             </div>
-        </div> <!-- end section-header -->
+        </div>
+        <!-- end section-header -->
 
         <div class="row">
 
@@ -602,32 +865,36 @@
                 <h3 class="subhead subhead--light">Where To Find Us</h3>
 
                 <p class="contact-address">
-                    B.I.T Sindri<br>
-                    828123, Dhanbad<br>
-                    Jharkhand
+                    B.I.T Sindri<br> 828123, Dhanbad<br> Jharkhand
                 </p>
-            </div> <!-- end contact-secondary -->
+            </div>
+            <!-- end contact-secondary -->
 
             <div class="col-five tab-full contact-secondary" data-aos="fade-up">
                 <h3 class="subhead subhead--light">Follow Us</h3>
 
                 <ul class="contact-social">
                     <li>
-                        <a href="https://www.facebook.com/ietebits/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/ietebits/" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/ietebits/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/ietebits/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UC8xo4Ru1Pask-hOM7j_YO-Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/channel/UC8xo4Ru1Pask-hOM7j_YO-Q" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
                     </li>
                     <li>
                         <a href="https://twitter.com/IETE_BITS" target="_blank"><i class="fab fa-twitter"></i></a>
                     </li>
-                </ul> <!-- end contact-social -->
+                </ul>
+                <!-- end contact-social -->
                 <!---
                 <div class="contact-subscribe">
                     <form id="mc-form" class="group mc-form" novalidate="true">
@@ -635,42 +902,64 @@
                         <input type="submit" name="subscribe" value="Subscribe">
                         <label for="mc-email" class="subscribe-message"></label>
                     </form>
-                </div>---> <!-- end contact-subscribe -->
-            </div> <!-- end contact-secondary -->
+                </div>--->
+                <!-- end contact-subscribe -->
+            </div>
+            <!-- end contact-secondary -->
 
-        </div> <!-- end row -->
+        </div>
+        <!-- end row -->
 
         <div class="row">
             <div class="col-full cl-copyright">
                 <span>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | IETE Students' Forum BIT Sindri</span>
-                <span>Design and Developed by : <a href="https:/facebook.com/ranjan17abhishek">Abhishek Ranjan</a> & <a href="https://www.facebook.com/roshanrajput96300">Roshan Singh</a></span>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | IETE Students'
+                        Forum BIT Sindri
+                    </span>
+                <span>Design and Developed by : <a href="https:/facebook.com/ranjan17abhishek">Abhishek Ranjan</a> &
+                        <a href="https://www.facebook.com/roshanrajput96300">Roshan Singh</a></span>
             </div>
         </div>
 
         <div class="cl-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"
+                        aria-hidden="true"></i></a>
         </div>
 
-    </section> <!-- end s-contact -->
-        
-        
+    </section>
+    <!-- end s-contact -->
+
+
     <!-- preloader
     ================================================== -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div id="loader">
             <video autoplay loop>
-                <source src="images/loader.mp4">
-            </video>
+                    <source src="images/loader.mp4">
+                </video>
         </div>
-    </div>
-        
-        
+    </div> -->
+
+
     <!-- Java Script
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-    </body>
+    <script>
+        const topNav = document.getElementById('top-navbar');
+        const topLinks = document.getElementById('top-links');
+        const topBar = document.getElementById('top-bar');
+        topBar.addEventListener('click', () => {
+            topNav.classList.toggle('radius');
+            topLinks.classList.toggle('show');
+        })
+    </script>
+
+
+
+</body>
+
 </html>
