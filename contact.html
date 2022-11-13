@@ -1,6 +1,7 @@
 <!DOCKTYPE html>
 <html class="no-js" lang="en">
-    <head>
+
+<head>
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
@@ -20,56 +21,210 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <style>
-        /* @media(max-width:480px){
-            .s-home.target-section{
-                background: #222;
-            }
-        } */
         @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
-    @media(max-width: 570px){
-    .bkgM{
-      z-index: .99;
-      position: relative;
-      height: 100vh;
-      width: 100vw;
-      font-family: 'Bungee Inline', cursive;
-    }
-
-    .bkgM1{  
-      z-index: .99;
-      font-family: 'Bungee Inline', cursive;
-    }
-
-    .bkgM h1{
-      color:white;
-      position: absolute;
-      left: 10vw;
-      top: 15vh;
-      z-index: .99;
-      font-family: 'Bungee Inline', cursive;
-      font-size: 10rem;
-      opacity: .8;
-    }
-    .bkgMh2{
-        z-index: .99;
-        color:white;
-        position: absolute;
-        left: 10vw;
-        top: 35vh;
-        font-family: 'Bungee Inline', cursive;
-        font-size: 5rem;
-        opacity: .8;
-    }
-  }
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98.2%;
+            height: 60px;
+            color: #222;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2em;
+            border-radius: 8px;
+            margin: 1rem;
+            margin-left: .9%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-family: "metropolis-regular", sans-serif;
+            /* font-size: 1.6rem; */
+        }
+        
+        .top-navbar .top-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-navbar .top-logo img {
+            height: 40px;
+        }
+        
+        .top-navbar .top-logo .text-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 2rem;
+        }
+        
+        .top-navbar .top-links ul {
+            display: flex;
+            position: relative;
+        }
+        
+        .top-navbar .top-links ul li {
+            /* position: relative; */
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+        }
+        
+        .top-navbar .top-links ul li a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .top-navbar .top-links ul li a .icon {
+            display: block;
+            line-height: 90px;
+            font-size: 2rem;
+            text-align: center;
+            transition: .5s;
+            color: rgb(19, 5, 93);
+            transform: translateY(35px);
+        }
+        
+        .top-navbar .top-links ul li.active a .icon,
+        .top-navbar .top-links ul li:hover a .icon {
+            transform: translateY(65px);
+            color: #fff;
+        }
+        
+        .top-navbar .top-links ul li a .text {
+            position: absolute;
+            top: 20px;
+            transition: .5s;
+            opacity: 0;
+            color: rgb(19, 5, 93);
+            font-size: .85em;
+            font-weight: bold;
+        }
+        
+        .top-navbar .top-links ul li.active a .text,
+        .top-navbar .top-links ul li:hover a .text {
+            opacity: 1;
+        }
+        
+        .top-navbar .top-links ul .indicator {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(19, 5, 93);
+            top: 80%;
+            left: 420px;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .top-navbar .top-links ul li:nth-child(1):hover~.indicator {
+            transform: translateX(calc(60px * -7));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(2):hover~.indicator {
+            transform: translateX(calc(60px * -6));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(3):hover~.indicator {
+            transform: translateX(calc(60px * -5));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(4):hover~.indicator {
+            transform: translateX(calc(60px * -4));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(5):hover~.indicator {
+            transform: translateX(calc(60px * -3));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(6):hover~.indicator {
+            transform: translateX(calc(60px * -2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(7):hover~.indicator {
+            transform: translateX(calc(60px * -1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(8):hover~.indicator {
+            transform: translateX(calc(60px * 0));
+        }
+        
+        .top-navbar .top-bar {
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        @media (max-width: 700px) {
+            .top-navbar {
+                box-shadow: none;
+                z-index: 1001;
+            }
+            .top-navbar.radius {
+                border-radius: 8px 8px 0px 0px;
+            }
+            .top-navbar .top-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-radius: 0px 0px 8px 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: none;
+                transition: .5s;
+            }
+            .top-navbar .top-links ul {
+                flex-direction: column;
+            }
+            .top-navbar .top-links ul li {
+                height: 50px;
+            }
+            .top-navbar .top-links ul .indicator {
+                display: none;
+            }
+            .top-navbar .top-links ul li a {
+                flex-direction: row;
+            }
+            .top-navbar .top-links ul li a .icon {
+                line-height: 50px;
+                display: inline;
+                transform: translateY(15px);
+            }
+            .top-navbar .top-links ul li a .text {
+                transform: translateY(-8px);
+                left: 70px;
+                opacity: 1;
+            }
+            .top-navbar .top-links ul li.active a .icon,
+            .top-navbar .top-links ul li:hover a .icon {
+                transform: translateY(20px);
+                color: rgb(19, 5, 93);
+            }
+            .top-navbar .top-bar {
+                display: initial;
+            }
+            .top-navbar .top-links.show {
+                display: initial;
+            }
+        }
     </style>
     <style>
-        @media (max-width:570px){
-        #home{
-            background-color: black;
+        @media (max-width:570px) {
+            #home {
+                background-color: black;
+            }
         }
-    }
-      </style>
+    </style>
 
     <!-- script
     ================================================== -->
@@ -82,212 +237,214 @@
     <link rel="icon" href="iete.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="iete.ico" type="image/x-icon" />
     <link rel="icon" href="iete.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
 
-    </head>
-    
-    <body id="top">
-        
+</head>
+
+<body id="top">
+
     <!-- header
     ================================================== -->
     <header class="s-header">
 
-        <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/logo.png" alt="Homepage">
-            </a>
-        </div> 
-        
-        <div class="bkgM">
-            <div class="bkgM1">
-              <h1 style="z-index: -1;">IETE</h1>
-              <h2 class="bkgMh2" style="z-index: -1;">Students' Forum</h2>
+        <div class="top-navbar" id="top-navbar">
+            <div class="top-logo">
+                <img src="./img/iete-logo.png" alt="">
+                <div class="text-logo">IETE</div>
             </div>
-          </div>
-        <!-- end header-logo -->
-
-        <nav class="header-nav">
-
-            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
-
-            <div class="header-nav__content">
-                <h3 style="font-size:20px">IETE Bits</h3>
-                
-                <ul class="header-nav__list">
-                    <li><a href="index.html" title="Home">Home</a></li>
-                    <li><a href="https://blog.ietebits.com/" title="Blog">Blogs</a></li>
-                    <li><a href="about.html" title="About Us">About Us</a></li>
-                    <li><a href="members.html" title="Members">Members</a></li>
-                    <li><a href="events.html" title="Events">Events</a></li>
-                    <li><a href="gallery.html" title="Gallery">Gallery</a></li>
-                    <li><a href="alumni.html" title="Alumni">Our Alumni</a></li>
-                    <li class="current"><a href="contact.html" title="Contact Us">Contact Us</a></li>
-                  </ul>
-    
-                <p>A positive atmosphere nurtures a positive attitude, which is required to take positive action.</p>
-    
-                <ul class="header-nav__social">
-                    <li>
-                        <a href="https://www.facebook.com/ietebits/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <div class="top-links" id="top-links">
+                <ul>
+                    <li class="top-link">
+                        <a href="index.html">
+                            <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+                            <span class="text">Home</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://www.instagram.com/ietebits/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <li class="top-link">
+                        <a href="https://blog.ietebits.com/">
+                            <span class="icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                            <span class="text">Blogs</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <li class="top-link">
+                        <a href="about.html">
+                            <span class="icon"><i class="fa-solid fa-info"></i></span>
+                            <span class="text">About</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UC8xo4Ru1Pask-hOM7j_YO-Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <li class="top-link">
+                        <a href="members.html">
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="text">Members</span>
+                        </a>
                     </li>
-                    <li>
-                        <a href="https://twitter.com/IETE_BITS" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <li class="top-link">
+                        <a href="events.html">
+                            <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
+                            <span class="text">Events</span>
+                        </a>
                     </li>
+                    <li class="top-link">
+                        <a href="gallery.html">
+                            <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
+                            <span class="text">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="alumni.html">
+                            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="text">Alumni</span>
+                        </a>
+                    </li>
+                    <li class="top-link active">
+                        <a href="contact.html">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
                 </ul>
+            </div>
+            <div class="top-bar" id="top-bar">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
 
-            </div> <!-- end header-nav__content -->
+    </header>
+    <!-- end s-header -->
 
-        </nav> <!-- end header-nav -->
 
-        <a class="header-menu-toggle" href="#0">
-            <span class="header-menu-icon"></span>
-        </a>
-
-    </header> <!-- end s-header -->
-    
-     
     <!-- home
     ================================================== -->
-    <section
-      id="home"
-      class="s-home target-section"
-      data-parallax="scroll"
-      data-natural-width="3000"
-      data-natural-height="1850"
-      data-position-y="top"
-    >
-      <div class="shadow-overlay"></div>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="1850" data-position-y="top">
+        <div class="shadow-overlay"></div>
 
         <div class="home-content">
 
             <div class="row home-content__main">
-                
+
                 <h1>
                     Contact Us
                 </h1>
 
                 <p>
-                Be Updated
+                    Be Updated
                 </p>
-            </div> <!-- end home-content__main -->
+            </div>
+            <!-- end home-content__main -->
 
-        </div> <!-- end home-content -->
+        </div>
+        <!-- end home-content -->
 
         <ul class="home-social">
             <li class="home-social-title">Follow Us</li>
-            <li><a href="https://www.facebook.com/ietebits/" target="_blank">
-                <i class="fab fa-facebook"></i>
-                <span class="home-social-text">Facebook</span>
-            </a></li>
-            <li><a href="https://www.instagram.com/ietebits/" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <span class="home-social-text">Instagram</span>
-            </a></li>
-            <li><a href="https://www.linkedin.com/company/42721036/admin/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                <span class="home-social-text">LinkedIn</span>
-            </a></li>
+            <li>
+                <a href="https://www.facebook.com/ietebits/" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <span class="home-social-text">Facebook</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/ietebits/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span class="home-social-text">Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="home-social-text">LinkedIn</span>
+                </a>
+            </li>
             <li>
                 <a href="https://www.youtube.com/c/IETEBITSindri" target="_blank">
-                  <i class="fab fa-youtube"></i>
-                  <span class="home-social-text">YouTube</span>
+                    <i class="fab fa-youtube"></i>
+                    <span class="home-social-text">YouTube</span>
                 </a>
             </li>
             <li>
                 <a href="https://twitter.com/IETE_BITS" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                  <span class="home-social-text">Twitter</span>
+                    <i class="fab fa-twitter"></i>
+                    <span class="home-social-text">Twitter</span>
                 </a>
             </li>
-        </ul> <!-- end home-social -->
+        </ul>
+        <!-- end home-social -->
 
         <a href="#about" class="home-scroll smoothscroll">
             <span class="home-scroll__text">Scroll Down</span>
             <span class="home-scroll__icon"></span>
-        </a> <!-- end home-scroll -->
+        </a>
+        <!-- end home-scroll -->
 
-    </section> <!-- end s-home -->
-    
-        
+    </section>
+    <!-- end s-home -->
+
+
     <!--- Site section
     =================================================== -->
     <section id="about" class="s-about">
-    <div class="site-section">
-      <div class="container">
+        <div class="site-section">
+            <div class="container">
 
-        
-       
-        <div class="row">
-          <div class="col-lg-7 mb-5" >
-              <h3>Send us your message</h3>
-            <form action="process.php" method="post">
-              <div class="form-group row">
-                <div class="col-md-6">
-                  <input type="text" name="fname" class="form-control" placeholder="First name" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="text" name="lname" class="form-control" placeholder="Last name" >
-                </div>
-              </div>
 
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <input type="text" name="email" class="form-control" placeholder="Email address" required>
-                </div>
-              </div>
 
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <textarea name="message" id="form-message" class="form-control" placeholder="Write your message." cols="25" rows="10" required></textarea>
+                <div class="row">
+                    <div class="col-lg-7 mb-5">
+                        <h3>Send us your message</h3>
+                        <form action="process.php" method="post">
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <input type="text" name="fname" class="form-control" placeholder="First name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="lname" class="form-control" placeholder="Last name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="text" name="email" class="form-control" placeholder="Email address" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <textarea name="message" id="form-message" class="form-control" placeholder="Write your message." cols="25" rows="10" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6 mr-auto">
+                                    <input type="submit" class="btn btn-block btn-primary" id="form-button" value="Send Message">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 ml-auto">
+                        <h3>Contact Us For</h3>
+                        <div class="bg-white p-3 p-md-5">
+                            <ul>
+                                <li><b>Any Queries :</b><br>
+                                    <i class="fab fa-mail"></i><a href="mailto:ietebits@gmail.com" target="_blank">ietebits@gmail.com</a><br> +919934438281
+                                </li><br>
+                                <li><b>Inductions :</b><br> Harsha Sinha<br> +917903607014
+                                    <br><br> Dhiraj Pandey<br> +919234669755
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-6 mr-auto">
-                  <input type="submit" class="btn btn-block btn-primary" id="form-button" value="Send Message">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-5 ml-auto">
-              <h3>Contact Us For</h3>
-              <div class="bg-white p-3 p-md-5">
-                <ul>
-                    <li><b>Any Queries :</b><br>
-                        <i class="fab fa-mail"></i><a href="mailto:ietebits@gmail.com" target="_blank">ietebits@gmail.com</a><br>
-                        +919934438281
-                    </li><br>
-                    <li><b>Inductions :</b><br>
-                        Harsha Sinha<br>
-                        +917903607014<br><br>
-                        Dhiraj Pandey<br>
-                        +919234669755
-                    </li>
-                </ul>
             </div>
         </div>
-        
-      </div>
-        </div>
-    </div> 
-    </section><!-- END .site-section -->    
-        
+    </section>
+    <!-- END .site-section -->
+
     <!-- contact
     ================================================== -->
     <section id="contact" class="s-contact">
@@ -298,7 +455,8 @@
                 <a href="mailto:ietebits@gmail.com" class="contact-email">ietebits@gmail.com</a>
                 <span class="contact-number">+91-7903607014  /  +91-9934438281</span><br><br>
             </div>
-        </div> <!-- end section-header -->
+        </div>
+        <!-- end section-header -->
 
         <div class="row">
 
@@ -306,11 +464,10 @@
                 <h3 class="subhead subhead--light">Where To Find Us</h3>
 
                 <p class="contact-address">
-                    B.I.T Sindri<br>
-                    828123, Dhanbad<br>
-                    Jharkhand
+                    B.I.T Sindri<br> 828123, Dhanbad<br> Jharkhand
                 </p>
-            </div> <!-- end contact-secondary -->
+            </div>
+            <!-- end contact-secondary -->
 
             <div class="col-five tab-full contact-secondary" data-aos="fade-up">
                 <h3 class="subhead subhead--light">Follow Us</h3>
@@ -331,7 +488,8 @@
                     <li>
                         <a href="https://twitter.com/IETE_BITS" target="_blank"><i class="fab fa-twitter"></i></a>
                     </li>
-                </ul> <!-- end contact-social -->
+                </ul>
+                <!-- end contact-social -->
                 <!---
                 <div class="contact-subscribe">
                     <form id="mc-form" class="group mc-form" novalidate="true">
@@ -339,15 +497,18 @@
                         <input type="submit" name="subscribe" value="Subscribe">
                         <label for="mc-email" class="subscribe-message"></label>
                     </form>
-                </div>---> <!-- end contact-subscribe -->
-            </div> <!-- end contact-secondary -->
+                </div>--->
+                <!-- end contact-subscribe -->
+            </div>
+            <!-- end contact-secondary -->
 
-        </div> <!-- end row -->
+        </div>
+        <!-- end row -->
 
         <div class="row">
             <div class="col-full cl-copyright">
                 <span>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | IETE Students' Forum BIT Sindri</span> 
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | IETE Students' Forum BIT Sindri</span>
                 <span>Design and Developed by : <a href="https:/facebook.com/ranjan17abhishek">Abhishek Ranjan</a> & <a href="https://www.facebook.com/roshanrajput96300">Roshan Singh</a></span>
             </div>
         </div>
@@ -356,24 +517,36 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
         </div>
 
-    </section> <!-- end s-contact -->
-        
-        
+    </section>
+    <!-- end s-contact -->
+
+
     <!-- preloader
     ================================================== -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div id="loader">
             <video autoplay loop>
                 <source src="images/loader.mp4">
             </video>
         </div>
-    </div>
-        
-        
+    </div> -->
+
+
     <!-- Java Script
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    </body>
+
+    <script>
+        const topNav = document.getElementById('top-navbar');
+        const topLinks = document.getElementById('top-links');
+        const topBar = document.getElementById('top-bar');
+        topBar.addEventListener('click', () => {
+            topNav.classList.toggle('radius');
+            topLinks.classList.toggle('show');
+        })
+    </script>
+</body>
+
 </html>
