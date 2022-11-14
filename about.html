@@ -219,6 +219,36 @@
                 background-color: black;
             }
         }
+        .home-social-title{
+          font-size: 30px;
+        }
+        .fab {
+            font-size: 30px;
+        }
+        .fab:hover{
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        .fa-facebook:hover {
+            color: #00acee;
+            text-decoration: none;
+        }
+        
+        .fa-twitter:hover {
+            color: #00acee;
+        }
+        
+        .fa-linkedin:hover {
+            color: #00acee;
+        }
+        
+        .fa-youtube:hover {
+            color: red;
+        }
+        
+        .fa-instagram:hover {
+            color: #bc2a8d;
+        }
     </style>
 
     <!-- script
@@ -317,60 +347,76 @@
     <!-- home
     ================================================== -->
     <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="1850" data-position-y="top">
-        <div class="shadow-overlay"></div>
-
-        <!-- <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.png" data-natural-width=3000 data-natural-height=1850 data-position-y=top>
-
-        <div class="shadow-overlay"></div> -->
-
-        <div class="home-content">
-
-            <div class="row home-content__main">
-
-                <h1>
-                    About IETE
-                </h1>
-
-                <p>
-                    We are simply The Best.
-                </p>
+        <div class="hero-H">
+            <div class="allHAlign">
+                <div class="hero-W">
+                    <div class="hing">
+                        <h1>ABOUT IETE</h1>
+                    </div>
+                    <div class="hing">
+                        <h1 style="font-size: 3rem;">WE ARE SIMPLY THE BEST</h1>
+                    </div>
+                </div>
+                <div class="heroP" style="box-sizing: border-box;padding-left: 8vw;">
+                    <img src="images/heroP.png" alt="">
+                </div>
             </div>
-            <!-- end home-content__main -->
-
+        </div>
+        
+        <!-- <div class="shadow-overlay"></div>
+        <div id="particles-js" class="home-content" style="padding: 0;">
+            <div class="container"> -->
+        <!-- <div class="row home-content__main" style="padding: 0;"><h1 style="font-size: 6rem;position: absolute;text-align: center; padding-left: 180px; padding-top: 300px;" class="ml3">IETE Welcomes the batch of </h1>
+            <h1 style="font-size: 5rem;position: absolute;text-align: center; padding-left: 540px; padding-top: 370px;" class="ml3">2K21 </h1>
+            </div> -->
+        </div>
+        <!-- end home-content__main -->
         </div>
         <!-- end home-content -->
+        <!-- we are inducting
+    ================================================== -->
+
+        <!-- end we are inducting -->
+
+        <!-- end home-sidelinks -->
 
         <ul class="home-social">
             <li class="home-social-title">Follow Us</li>
             <li>
-                <a href="https://www.facebook.com/ietebits/" target="_blank">
+                <a href="https://www.facebook.com/ietebits" class="fab fa-facebook"></a>
+                <!-- <a href="" target="_blank">
                     <i class="fab fa-facebook"></i>
                     <span class="home-social-text">Facebook</span>
-                </a>
+                </a> -->
+
             </li>
             <li>
-                <a href="https://www.instagram.com/ietebits/" target="_blank">
+                <a href="https://www.instagram.com/ietebits/" class="fab fa-instagram"></a>
+                <!-- <a href="https://www.instagram.com/ietebits/" target="_blank">
                     <i class="fab fa-instagram"></i>
                     <span class="home-social-text">Instagram</span>
-                </a>
+                </a> -->
             </li>
             <li>
-                <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank">
+                <a href="https://www.linkedin.com/company/42721036/admin" class="fab fa-linkedin"></a>
+                <!-- <a href="https://www.linkedin.com/company/42721036/admin/" target="_blank">
                     <i class="fab fa-linkedin"></i>
                     <span class="home-social-text">LinkedIn</span>
-                </a>
+                </a> -->
             </li>
             <li>
-                <a href="https://www.youtube.com/c/IETEBITSindri" target="_blank">
+                <a href="https://www.youtube.com/c/IETEBITSindri" class="fab fa-youtube"></a>
+                <!-- <a href="https://www.youtube.com/c/IETEBITSindri" target="_blank">
                     <i class="fab fa-youtube"></i>
                     <span class="home-social-text">YouTube</span>
-                </a>
+                </a> -->
             </li>
             <li>
-                <a href="https://twitter.com/IETE_BITS" target="_blank">
+                <a href="https://twitter.com/IETE_BITS" class="fab fa-twitter"></a>
+                <!-- <a href="https://twitter.com/IETE_BITS" target="_blank">
                     <i class="fab fa-twitter"></i>
                     <span class="home-social-text">Twitter</span>
-                </a>
+                </a> -->
             </li>
         </ul>
         <!-- end home-social -->
@@ -380,7 +426,6 @@
             <span class="home-scroll__icon"></span>
         </a>
         <!-- end home-scroll -->
-
     </section>
     <!-- end s-home -->
 

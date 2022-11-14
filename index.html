@@ -211,7 +211,7 @@
         }
         
         .magnify {
-            transition: 1s;
+            transition: 0.1s;
         }
         
         .magnify:hover {
@@ -220,11 +220,14 @@
         }
         
         .fab {
-            font-size: 19px;
+            font-size: 30px;
         }
-        
+        .fab:hover{
+          transform: scale(1.2);
+          z-index: 2;
+        }
         .fa-facebook:hover {
-            color: #3b5998;
+            color: #00acee;
             text-decoration: none;
         }
         
@@ -233,7 +236,7 @@
         }
         
         .fa-linkedin:hover {
-            color: #0A66C2;
+            color: #00acee;
         }
         
         .fa-youtube:hover {
@@ -247,7 +250,9 @@
         .home-social li a {
             text-decoration: none;
         }
-        
+        .home-social-title{
+          font-size: 30px;
+        }
         .new-box {
             padding: 20px;
             display: flex;
