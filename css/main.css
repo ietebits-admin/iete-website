@@ -2057,13 +2057,13 @@
         
         @media(max-width: 530px) {
             .heroP img {
-                width: 85vw;
+                width: 80vw;
                 height: auto;
                 margin-left: 1.75vw;
                 margin-bottom: 30vw;
             }
             .hero-W {
-                margin-left: 13vw;
+                margin-left: 7vw;
                 margin-bottom: 80vw;
             }
         }
